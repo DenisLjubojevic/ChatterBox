@@ -1,0 +1,19 @@
+# Ignore IDE files
+.idea/
+*.iml
+
+# Ignore Node.js dependencies
+frontend/node_modules/
+
+# Ignore Angular build outputs
+frontend/dist/
+
+# Ignore Java build outputs
+backend/target/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
