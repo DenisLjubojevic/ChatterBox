@@ -1,0 +1,5 @@
+.body{
+  background-image: linear-gradient(var(--color-secondary), var(--color-primary));
+  height: calc(100vh - 70px);
+  padding: 20px;
+}

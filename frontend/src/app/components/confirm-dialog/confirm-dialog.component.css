@@ -1,0 +1,31 @@
+.container{
+  padding: 5px;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+mat-dialog-content p, h2{
+  color: var(--color-primary);
+}
+
+mat-dialog-actions{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-button{
+  background-color: green;
+  width: 5vw;
+}
+
+.ok-button{
+  background-color: green;
+  width: 10vw;
+}
+
+.cancel-button{
+  background-color: darkred;
+  width: 5vw;
+}

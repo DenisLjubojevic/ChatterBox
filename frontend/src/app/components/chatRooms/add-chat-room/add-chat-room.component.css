@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--color-primary);
+}
+
+button {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-color: var(--color-border);
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+button:hover{
+  border-color: var(--color-border);
+}
+
+.invalid-border{
+  border: 2px dashed red;
+}
+
+.error-message{
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}

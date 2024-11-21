@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="container-main">
+    <input
+      type="text"
+      placeholder="Search for public groups..."
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="onSearch()">
+
+    <div *ngIf="searchResults.length > 0" class="search-results">
+      <div *ngFor="let chatRoom of searchResults">
+        <div class="one-chat">
+          <div class="chat-picture">
+            <img [src]="chatRoom.pictureUrl" alt="Chat picture">
+          </div>
+          <div>
+            {{ chatRoom.name }}
+          </div>
+          <button (click)="joinGroup(chatRoom)">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button (click)="openCreateGroup()">Create new group</button>
+  <button (click)="closeDialog()" class="close-search-button">Close</button>
+</div>
+

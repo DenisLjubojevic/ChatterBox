@@ -1,0 +1,93 @@
+.message-list-container{
+  height: calc(90vh - 70px);
+  overflow: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.date-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.date-header .line {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 10px;
+}
+
+.date-header .date-text {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 13px;
+}
+
+.message-container{
+  display: flex;
+  width: 100%;
+}
+
+.left-message-container, .right-message-container {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.left-message-container {
+  flex-direction: row;
+}
+
+.right-message-container {
+  flex-direction: row-reverse;
+}
+
+.message-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  object-fit: cover;
+  background-color: white;
+}
+
+.message-content{
+  max-width: 60%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-message{
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 0 10px 10px 10px;
+}
+
+.right-message{
+  background-color: #333;
+  color: white;
+  border-radius: 10px 0 10px 10px;
+}
+
+.message-time {
+  font-size: 0.75em;
+  color: #666;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.right-message .message-time {
+  color: #e0e0e0;
+}
+
+.message-picture{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}

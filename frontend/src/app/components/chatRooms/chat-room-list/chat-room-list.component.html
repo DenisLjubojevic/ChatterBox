@@ -1,0 +1,122 @@
+<div class="chat-container">
+  <div class="sidebar">
+    <div class="all-chat-conatiner">
+      <div *ngFor="let room of chatRooms; trackBy: trackByRoom"  (click)="selectRoom(room)">
+        <div class="chat-room" *ngIf="room.type != 'closed'">
+          <div class="chat-room-picture">
+            <img [src]="room.pictureUrl" alt="Chat room picture" />
+          </div>
+
+          <div class="chat-inf">
+            <p class="chatName"><strong>{{ room.name }}</strong></p>
+            <div [innerHTML]="getLastMessageTimestamp(room)"></div>
+            <p>{{ room.type }}</p>
+          </div>
+
+
+          <div class="right-info">
+            <button class="details-button" (click)="showChatDetails(room, $event)">
+              <i class="fa-solid fa-info"></i>
+            </button>
+
+            <span *ngIf="unreadCounts[room.id] > 0" class="unread-badge">
+            {{ unreadCounts[room.id] }}
+            </span>
+          </div>
+        </div>
+        <div class="chat-room" *ngIf="room.type == 'closed'">
+          <div class="chat-room-picture">
+            <img [src]="getFriendPicture(room)" alt="Chat room picture" />
+          </div>
+
+          <div class="chat-inf">
+            <strong><div class="chatName" [innerHTML]="getFriendName(room)"></div></strong>
+            <div [innerHTML]="getLastMessageTimestamp(room)"></div>
+            <p>{{ room.type }}</p>
+          </div>
+
+          <div class="right-info">
+            <button class="details-button" (click)="showChatDetails(room, $event)">
+              <i class="fa-solid fa-info"></i>
+            </button>
+            <span *ngIf="unreadCounts[room.id] > 0" class="unread-badge">
+            {{ unreadCounts[room.id] }}
+          </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="add-chat-button">
+      <button (click)="joinGroup()">Join new group</button>
+    </div>
+  </div>
+  <div class="devider">
+  </div>
+
+  <div class="chat-main">
+    <app-chat-room *ngIf="selectedChatRoom" [chatRoom]="selectedChatRoom" [messages]="messages">
+    </app-chat-room>
+  </div>
+
+  <div *ngIf="selectedRoomDetails">
+    <div class="chat-details" *ngIf="selectedRoomDetails.type != 'closed'">
+      <div class="chat-details-info">
+        <img [src]="selectedRoomDetails.pictureUrl" alt="Chat room picture" class="details-picutre">
+        <h1>{{ selectedRoomDetails.name }}</h1>
+        <p>Type: {{ selectedRoomDetails.type }}</p>
+        <p>Description: {{ selectedRoomDetails.description }}</p>
+        <p>Created by: {{ selectedRoomDetails.createdBy.name }}</p>
+      </div>
+      <br>
+      <hr>
+      <h2>Members:</h2>
+      <div  class="chat-details-friends">
+        <div *ngFor="let member of chatMembers" class="member-row">
+          <div class="picture-placeholder">
+            <img [src]="member.pfpUrl" alt="profile picture" class="member-picture">
+          </div>
+          <p class="member-name">
+            {{ member.displayedName }}
+            <span class="status-dot" [ngClass]="{
+              'online': isMemberOnline(member.id) === 'online',
+              'offline': isMemberOnline(member.id) === 'offline',
+              'blocked': isMemberOnline(member.id) === 'blocked'}"
+            ></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="chat-details-buttons">
+        <button (click)="ChatRoomMoreDetails(selectedRoomDetails)">Details</button>
+        <button (click)="closeDetails()">Close</button>
+      </div>
+    </div>
+
+    <div class="chat-details" *ngIf="selectedRoomDetails.type == 'closed'">
+      <div class="chat-details-info">
+        <img [src]="getFriendPicture(selectedRoomDetails)" alt="Chat room picture" class="details-picutre">
+        <h1><div class="chatName" [innerHTML]="getFriendName(selectedRoomDetails)"></div></h1>
+        <p>Type: {{ selectedRoomDetails.type }}</p>
+        <p>Description: {{ selectedRoomDetails.description }}</p>
+        <p>Created by: {{ selectedRoomDetails.createdBy.name }}</p>
+      </div>
+      <br>
+      <hr>
+      <h2>Members:</h2>
+      <div  class="chat-details-friends">
+        <div *ngFor="let member of chatMembers" class="member-row">
+          <div class="picture-placeholder">
+            <img [src]="member.pfpUrl" alt="profile picture" class="member-picture">
+          </div>
+          <p class="member-name">{{ member.displayedName }}</p>
+        </div>
+      </div>
+
+      <div class="chat-details-buttons">
+        <div>
+          <button (click)="closeDetails()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

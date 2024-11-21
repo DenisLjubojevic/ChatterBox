@@ -1,0 +1,29 @@
+.background{
+  background-image: var(--background-url);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: calc(100vh - 70px);
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container{
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-loginBg);
+}
+
+.sender-name{
+  font-size: 22px;
+}
+
+button{
+  margin-top: 10px;
+  margin-left: 10px;
+}

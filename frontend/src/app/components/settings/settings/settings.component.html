@@ -1,0 +1,25 @@
+<div class="background">
+  <div class="settings-container">
+    <h1>User Settings</h1>
+    <hr>
+
+    <div *ngIf="!isSettingsLoaded" class="loading">
+      <p>Loading settings...</p>
+    </div>
+
+    <app-themes *ngIf="isSettingsLoaded" [themeColor]="userSettings.themeColor"
+    (themeColorChange)="updateThemeColor($event)">
+    </app-themes>
+
+    <hr>
+
+    <app-privacy *ngIf="isSettingsLoaded" [privacySettings]="{
+      showOnlineStatus: userSettings.showOnlineStatus,
+      profileVisibility: userSettings.profileVisibility
+    }"
+                 (privacySettingsChange)="updatePrivacySettings($event)">
+    </app-privacy>
+
+    <button (click)="saveAllSettings()" class="save-button">Save All Changes</button>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div #messageListContainer class="message-list-container">
+  <div *ngFor="let message of messageList; let i = index">
+    <div *ngIf="i === 0 || getFormattedDate(message.timestamp) !== getFormattedDate(messageList[i - 1].timestamp)" class="date-header">
+      <div class="line"></div>
+      <span class="date-text">{{ getFormattedDate(message.timestamp) }}</span>
+      <div class="line"></div>
+    </div>
+
+    <div class="message-container">
+      <div
+        [ngClass]="{
+        'left-message-container': message.user.displayedName != currentUser?.displayedName,
+        'right-message-container': message.user.displayedName == currentUser?.displayedName
+      }">
+
+        <img [src]="message.user.pfpUrl" alt="Chat room picture" class="message-picture" />
+
+        <div class="message-content"
+             [ngClass]="{
+        'left-message': message.user.displayedName != currentUser?.displayedName,
+        'right-message': message.user.displayedName == currentUser?.displayedName
+      }">
+          <p *ngIf="currentUser?.displayedName != message.user.displayedName">
+            <strong> {{ message.user.displayedName }} </strong>: {{ message.content }}
+          </p>
+          <p *ngIf="currentUser?.displayedName == message.user.displayedName">
+            {{ message.content }} :<strong> YOU</strong>
+          </p>
+
+          <span class="message-time">{{ message.timestamp | date:'shortTime' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="container-main">
+    <input
+      type="text"
+      placeholder="Search for friends..."
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="handleSearchActions()">
+
+    <div *ngIf="searchResults.length > 0" class="search-results">
+      <div *ngFor="let user of searchResults">
+        <div *ngIf="isFound" class="one-friend">
+          {{ user.displayedName }}
+          <button (click)="handleFriendAction(user)">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!isFound" class="search-results">
+      <p>Could not find any user under that name!</p>
+    </div>
+  </div>
+
+  <button (click)="closeDialog()" class="close-friends-search-button">Close</button>
+</div>
+

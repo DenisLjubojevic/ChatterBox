@@ -1,0 +1,11 @@
+h3{
+  border-bottom: 2px solid black;
+}
+
+.privacy-settings{
+  padding: 10px;
+}
+
+.privacy-settings div{
+  padding: 10px;
+}

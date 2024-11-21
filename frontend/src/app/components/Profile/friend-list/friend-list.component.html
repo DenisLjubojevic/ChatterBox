@@ -1,0 +1,33 @@
+<div class="friends-container">
+  <div>
+    <h1>Friends:</h1>
+  </div>
+
+  <div class="friends-container-list">
+    <div *ngIf="!hasFriends">
+      <p>You do not have friends, add someone to keep you company!</p>
+    </div>
+
+    <div *ngFor="let friend of friends" class="friends-list">
+      <p class="friend-name">
+        {{ friend.displayedName }}
+        <span class="status-dot" [ngClass]="{
+          'online': isFriendOnline(friend.id) === 'online',
+          'offline': isFriendOnline(friend.id) === 'offline',
+          'blocked': isFriendOnline(friend.id) === 'blocked'}"
+        ></span>
+      </p>
+      <button (click)="openChatWithFriend(friend.name)" class="icons-friend-button">
+        <i class="fa-solid fa-message"></i>
+      </button>
+      <button (click)="removeFriend(friend.id)" class="icons-friend-button">
+        <i class="fa-solid fa-user-slash"></i>
+      </button>
+    </div>
+  </div>
+  <div>
+    <button (click)="addFriend()">Add Friends</button>
+  </div>
+</div>
+
+

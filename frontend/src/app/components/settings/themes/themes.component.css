@@ -1,0 +1,51 @@
+label, button{
+  margin-left: 10px;
+}
+
+div{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h3{
+  border-bottom: 2px solid black;
+}
+
+.indicator-green{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: linear-gradient(#187377, #98e4e6);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.indicator-orange{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: linear-gradient(#af3903, #f4824f);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.indicator-blue-pink{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: linear-gradient(#2F3C7E, #FBEAEB);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.indicator-black-yellow{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: linear-gradient(#101820, #FEE715);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}

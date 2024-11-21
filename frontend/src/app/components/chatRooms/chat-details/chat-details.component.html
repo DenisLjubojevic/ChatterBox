@@ -1,0 +1,41 @@
+<div class="background">
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="chat-image-container">
+        <img [src]="previewImage || chatRoom.pictureUrl" alt="Profile picture" class="chat-image">
+        <input type="file" (change)="onImageChange($event)" *ngIf="isEditMode">
+      </div>
+    </div>
+
+    <div class="chat-details">
+      <h2 *ngIf="!isEditMode">{{ chatRoom.name }}</h2>
+      <input *ngIf="isEditMode" [(ngModel)]="chatRoom.name" placeholder="Name" class="chat-input">
+      <p *ngIf="!isEditMode">{{ chatRoom.description}}</p>
+      <input *ngIf="isEditMode" [(ngModel)]="chatRoom.description" placeholder="Description" class="chat-input">
+    </div>
+
+    <div class="chat-info">
+      <div class="chat-info-item">
+        <label>Type:</label>
+        <span *ngIf="!isEditMode">{{ chatRoom.type }}</span>
+        <select *ngIf="isEditMode" [(ngModel)]="chatRoom.type" placeholder="Type" class="chat-input">
+          <option [value]="'Public'" [selected]="chatRoom.type === 'Public'">Public</option>
+          <option [value]="'Private'" [selected]="chatRoom.type === 'Private'">Private</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="chat-actions">
+      <button *ngIf="!isEditMode && isCreator()" (click)="toggleEditMode()" class="edit-button">Edit Chat</button>
+      <button *ngIf="isEditMode" (click)="saveChanges()" class="save-button">Save Changes</button>
+      <button *ngIf="isEditMode" (click)="cancelEdit()" class="cancel-button">Cancel</button>
+    </div>
+    <hr>
+    <div class="chat-actions">
+      <button (click)="inviteFriends()" class="cancel-button">Invite friends</button>
+      <button (click)="leaveGroup()" class="cancel-button">Leave chat</button>
+      <button (click)="deleteChatRoom()" *ngIf="isCreator()" class="save-button">Delete chat</button>
+    </div>
+  </div>
+
+</div>

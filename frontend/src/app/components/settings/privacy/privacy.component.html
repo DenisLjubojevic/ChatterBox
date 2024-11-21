@@ -1,0 +1,16 @@
+<div class="privacy-settings">
+  <h3>Privacy Settings</h3>
+  <div>
+    <label>
+      <input type="checkbox" [(ngModel)]="privacy.showOnlineStatus" />
+      Show Online Status
+    </label>
+  </div>
+  <div>
+    <label>
+      <input type="checkbox" [(ngModel)]="privacy.profileVisibility" />
+      Profile Visible to Everyone
+    </label>
+  </div>
+  <button  (click)="emitPrivacySettings()">Apply Privacy Changes</button>
+</div>
