@@ -1,17 +1,38 @@
-label, button{
-  margin-left: 10px;
+h3{
+  border-bottom: 2px solid black;
 }
 
-div{
+.theme-container{
   display: flex;
-  flex-direction: row;
-  padding: 10px;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-h3{
-  border-bottom: 2px solid black;
+.theme-item{
+  width: 33%;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.theme-item.selected{
+  transform: scale(1.1);
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-border);
+}
+
+.theme-item:hover {
+  transform: scale(1.05);
+}
+
+.theme-item label {
+  margin-top: 5px;
 }
 
 .indicator-green{
@@ -23,7 +44,7 @@ h3{
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.indicator-orange{
+.indicator-brown{
   width: 30px;
   height: 30px;
   border-radius: 50%;

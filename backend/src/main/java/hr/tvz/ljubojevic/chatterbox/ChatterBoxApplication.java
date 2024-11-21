@@ -9,7 +9,7 @@ public class ChatterBoxApplication {
 
 	public static void main(String[] args) {
 		Dotenv dotenv = Dotenv.configure()
-				.directory("./")
+				.directory("../")
 				.load();
 
 		System.setProperty("DB_USERNAME", dotenv.get("DB_USERNAME"));

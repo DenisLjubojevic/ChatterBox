@@ -2,26 +2,30 @@
   <h3>Change themes</h3>
 </div>
 
-<div>
-  <div class="indicator-green"> </div>
-  <label> - Green</label>
-  <button type="button" (click)="setGreenTheme()">Change theme</button>
+<div class="theme-container">
+  <div class="theme-item" [ngClass]="{'selected': themeColor === 'green'}" (click)="previewTheme('green')">
+    <div class="indicator-green"></div>
+    <label>Green</label>
+  </div>
+
+  <div class="theme-item" [ngClass]="{'selected': themeColor === 'brown'}" (click)="previewTheme('brown')">
+    <div class="indicator-brown"></div>
+    <label>Brown</label>
+  </div>
+
+  <div class="theme-item" [ngClass]="{'selected': themeColor === 'bluePink'}" (click)="previewTheme('bluePink')">
+    <div class="indicator-blue-pink"></div>
+    <label>Blue/Pink</label>
+  </div>
+
+  <div class="theme-item" [ngClass]="{'selected': themeColor === 'blackYellow'}" (click)="previewTheme('blackYellow')">
+    <div class="indicator-black-yellow"></div>
+    <label>Black/Yellow</label>
+  </div>
 </div>
 
 <div>
-  <div class="indicator-orange"> </div>
-  <label> - Brown</label>
-  <button type="button" (click)="setBrownTheme()">Change theme</button>
-</div>
-<div>
-  <div class="indicator-blue-pink"> </div>
-  <label> - Blue/Pink</label>
-  <button type="button" (click)="setBluePinkTheme()">Change theme</button>
-</div>
-<div>
-  <div class="indicator-black-yellow"> </div>
-  <label> - Black/Yellow</label>
-  <button type="button" (click)="setBlackYellowTheme()">Change theme</button>
+  <button (click)="applyTheme()">Apply</button>
 </div>
 
 <!--<div>
