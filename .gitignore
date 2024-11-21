@@ -11,6 +11,9 @@ frontend/dist/
 # Ignore Java build outputs
 backend/target/
 
+# Exclude application.properties
+backend/src/main/resources/application.properties
+
 # Ignore system files
 .DS_Store
 Thumbs.db
