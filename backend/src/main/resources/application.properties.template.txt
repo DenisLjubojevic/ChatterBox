@@ -1,0 +1,23 @@
+spring.application.name=ChatterBox
+
+# MySQL database configurations
+spring.datasource.url=jdbc:mysql://localhost:3306/ChatAppDB?useSSL=false&serverTimezone=UTC
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
+
+# Hibernate configurations
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+jwt.token-validity-seconds=3600
+jwt.base64-secret=YOUR_JWT_SECRET
+
+spring.servlet.multipart.max-file-size=128MB
+spring.servlet.multipart.max-request-size=128MB
+spring.servlet.multipart.enabled=true
+
+spring.redis.host=localhost
+spring.redis.port=6379
+spring.redis.password=
+spring.redis.timeout=60000
