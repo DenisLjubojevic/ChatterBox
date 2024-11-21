@@ -2,11 +2,10 @@ package hr.tvz.ljubojevic.chatterbox.service.user;
 
 import hr.tvz.ljubojevic.chatterbox.DTO.FriendsDTO;
 import hr.tvz.ljubojevic.chatterbox.DTO.UserDTO;
-import hr.tvz.ljubojevic.chatterbox.model.FriendRequests;
-import hr.tvz.ljubojevic.chatterbox.model.User;
-import hr.tvz.ljubojevic.chatterbox.repository.FriendRequestsRepository;
-import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
+import hr.tvz.ljubojevic.chatterbox.model.*;
+import hr.tvz.ljubojevic.chatterbox.repository.*;
 import hr.tvz.ljubojevic.chatterbox.service.FileStorageService;
+import hr.tvz.ljubojevic.chatterbox.service.chatRoom.ChatRoomServiceImpl;
 import hr.tvz.ljubojevic.chatterbox.service.userChat.UserChatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -18,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -34,6 +34,16 @@ public class UserServiceImpl implements UserService {
     @Lazy
     @Autowired
     private UserChatService userChatService;
+    @Autowired
+    private UserSettingRepository userSettingRepository;
+    @Autowired
+    private ChatRoomRepository chatRoomRepository;
+    @Autowired
+    private ChatInviteRepository chatInviteRepository;
+    @Autowired
+    private MessageRepository messageRepository;
+    @Autowired
+    private RefreshTokenRepository refreshTokenRepository;
 
     @Override
     @Transactional
@@ -198,6 +208,66 @@ public class UserServiceImpl implements UserService {
     public List<FriendRequests> getPendingRequestsForUser(Long userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
         return friendRequestsRepository.findByRecipientAndStatus(user, "PENDING");
+    }
+
+    @Override
+    public boolean changePassword(String username, String newPassword){
+        Optional<User> user = userRepository.findByUsername(username);
+        if (user.isPresent()) {
+            User changedUser = user.get();
+            changedUser.setPass(passwordEncoder.encode(newPassword));
+            userRepository.save(changedUser);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deleteAccount(String username){
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+        if (optionalUser.isPresent()){
+            User user = optionalUser.get();
+
+            List<ChatRoom> chatRooms = chatRoomRepository.findAll();
+            for (ChatRoom chatRoom : chatRooms) {
+                chatRoom.getMembers().remove(user);
+                if (chatRoom.getCreatedBy().equals(user)) {
+                    System.out.println("User chat room - " + chatRoom);
+                    this.messageRepository.deleteMsg(chatRoom.getId());
+
+                    if (!Objects.equals(chatRoom.getPictureUrl(), "http://localhost:8080/images/groupDefault.png")) {
+                        fileStorageService.deleteFile(chatRoom.getPictureUrl());
+                    }
+
+                    chatRoomRepository.deleteById(chatRoom.getId());
+                }
+            }
+
+            List<ChatInvitation> invitations = chatInviteRepository.findBySenderOrRecipient(user, user);
+            chatInviteRepository.deleteAll(invitations);
+
+            List<FriendRequests> friendRequests = friendRequestsRepository.findBySenderOrRecipient(user, user);
+            friendRequestsRepository.deleteAll(friendRequests);
+
+            List<Message> messages = messageRepository.findByUser(user);
+            messageRepository.deleteAll(messages);
+
+            List<User> friends = user.getFriends();
+            for (User friend : friends) {
+                friend.getFriends().remove(user);
+                userRepository.save(friend);
+            }
+
+            List<RefreshToken> refreshTokens = refreshTokenRepository.findByUser(user);
+            refreshTokenRepository.deleteAll(refreshTokens);
+
+            userSettingRepository.deleteById(user.getId());
+            userRepository.delete(user);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override

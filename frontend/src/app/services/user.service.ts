@@ -32,12 +32,6 @@ export class UserService {
     return this.http.get<Users>(this.baseUrl + '/user/all/' + username)
       .pipe(retry(1), shareReplay(1), catchError(this.errorHandl));
   }
-
-  getUserById(id: number): Observable<Users>{
-    return this.http.get<Users>(this.baseUrl + '/user/userId/' + id)
-      .pipe(retry(1), catchError(this.errorHandl));
-  }
-
   getUserSettings(userId: number): Observable<UserSettings>{
     return this.http
       .get<UserSettings>(this.baseUrl + "/user/settings/get/" + userId)
@@ -136,6 +130,16 @@ export class UserService {
         { params: { query } }
       )
       .pipe(retry(1), catchError(this.errorHandl));
+  }
+
+  changePassword(newPassword: string): Observable<string>{
+    return this.http
+      .post<string>(`${this.baseUrl}/user/change-password`, { newPassword })
+      .pipe(retry(1), catchError(this.errorHandl));
+  }
+
+  deleteAccount(): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/user/delete-account`);
   }
 
   errorHandl(error: any){

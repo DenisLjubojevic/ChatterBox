@@ -14,4 +14,6 @@ public interface ChatInviteRepository extends JpaRepository<ChatInvitation, Long
     List<ChatInvitation> findByRecipientAndStatus(User recipient, String status);
 
     Optional<ChatInvitation> findBySenderAndRecipientAndChat(User sender, User recipient, ChatRoom chat);
+
+    List<ChatInvitation> findBySenderOrRecipient(User sender, User recipient);
 }

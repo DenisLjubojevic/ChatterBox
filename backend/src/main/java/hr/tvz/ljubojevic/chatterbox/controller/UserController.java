@@ -1,15 +1,22 @@
 package hr.tvz.ljubojevic.chatterbox.controller;
 
 import hr.tvz.ljubojevic.chatterbox.DTO.UserDTO;
+import hr.tvz.ljubojevic.chatterbox.model.ChangePasswordRequest;
 import hr.tvz.ljubojevic.chatterbox.model.User;
+import hr.tvz.ljubojevic.chatterbox.model.UserSettings;
+import hr.tvz.ljubojevic.chatterbox.repository.UserSettingRepository;
 import hr.tvz.ljubojevic.chatterbox.service.user.UserService;
 import hr.tvz.ljubojevic.chatterbox.service.user.UserStatusService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,6 +29,9 @@ import java.util.*;
 public class UserController {
     private UserService userService;
     private UserStatusService userStatusService;
+
+    @Autowired
+    private UserSettingRepository userSettingRepository;
 
     @GetMapping("/all/{username}")
     public Optional<UserDTO> getUserByUsername(@PathVariable String username) {
@@ -61,6 +71,12 @@ public class UserController {
     public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
         System.out.println("createUser called");
         UserDTO createdUser = this.userService.createNewUser(userDTO);
+
+        UserSettings userSettings = new UserSettings();
+        userSettings.setUserId(createdUser.getId());
+
+        this.userSettingRepository.save(userSettings);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
     }
 
@@ -118,5 +134,42 @@ public class UserController {
         List<UserDTO> usersDTO = new ArrayList<>();
         users.forEach(user -> usersDTO.add(userService.convertUserToDTO(user)));
         return ResponseEntity.status(HttpStatus.OK).body(usersDTO);
+    }
+
+    @PostMapping("/change-password")
+    public ResponseEntity<String> changePassword(@RequestBody ChangePasswordRequest request){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication != null && authentication.getPrincipal() instanceof UserDetails){
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            String username = userDetails.getUsername();
+
+            boolean isPasswordUpdated = userService.changePassword(username, request.getNewPassword());
+            if (isPasswordUpdated) {
+                return ResponseEntity.status(HttpStatus.OK).body("Password changed successfully");
+            } else {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Password change failed");
+            }
+        }
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Password change failed");
+    }
+
+    @DeleteMapping("/delete-account")
+    public ResponseEntity<String> deleteAccount(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.getPrincipal() instanceof UserDetails){
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            String username = userDetails.getUsername();
+
+            boolean isDeleted = userService.deleteAccount(username);
+            if (isDeleted) {
+                return ResponseEntity.ok("Account deleted successfully");
+            } else {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Account deletion failed");
+            }
+        }
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Account deletion failed");
     }
 }

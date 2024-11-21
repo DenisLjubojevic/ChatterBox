@@ -37,6 +37,10 @@ public interface UserService {
 
     List<FriendRequests> getPendingRequestsForUser(Long userId);
 
+    boolean changePassword(String username, String newPassword);
+
+    boolean deleteAccount(String username);
+
     UserDTO convertUserToDTO(User user);
 
     User convertUserDTOToUser(UserDTO userDTO);

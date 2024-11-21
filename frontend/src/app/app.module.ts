@@ -28,6 +28,9 @@ import { ChatSearchComponent } from './components/chatRooms/chat-search/chat-sea
 import { ChatDetailsComponent } from './components/chatRooms/chat-details/chat-details.component';
 import { SettingsComponent } from './components/settings/settings/settings.component';
 import { PrivacyComponent } from './components/settings/privacy/privacy.component';
+import { AccountSettingsComponent } from './components/settings/account-settings/account-settings.component';
+import { ChangePasswordDialogComponent } from './components/change-password-dialog/change-password-dialog.component';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { PrivacyComponent } from './components/settings/privacy/privacy.componen
     ChatSearchComponent,
     ChatDetailsComponent,
     SettingsComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    AccountSettingsComponent,
+    ChangePasswordDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import { PrivacyComponent } from './components/settings/privacy/privacy.componen
     ReactiveFormsModule,
     MatDialogModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatInputModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

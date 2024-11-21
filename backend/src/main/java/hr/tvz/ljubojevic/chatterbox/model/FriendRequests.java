@@ -12,7 +12,7 @@ public class FriendRequests {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "sender_id", nullable = false)
     private User sender;
 
