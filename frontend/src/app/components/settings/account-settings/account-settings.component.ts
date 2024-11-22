@@ -37,19 +37,26 @@ export class AccountSettingsComponent {
 
     dialogRef.afterClosed().subscribe(res => {
       if (res){
-        this.userService.deleteAccount().subscribe(res => {
-          const refreshToken = localStorage.getItem('refreshToken');
-          if (refreshToken){
-            this.authService.logout(refreshToken).subscribe({
-              next:() => {
-                this.notification.logoutMessageSucces("Account delete!", "Your account has been successfully deleted!")
-              },
-              error: (error) => {
-                console.log(error);
-              }
-            });
-          }
-        })
+        const refreshToken = localStorage.getItem('refreshToken');
+
+        if (refreshToken) {
+          this.userService.deleteAccount().subscribe({
+            next: () => {
+              localStorage.removeItem('refreshToken');
+              localStorage.removeItem('token');
+              localStorage.removeItem('currentUser');
+              this.notification.logoutMessageSucces(
+                "Account deleted!",
+                "Your account has been successfully deleted!"
+              );
+            },
+            error: (error) => {
+              console.error("Account deletion failed:", error);
+            }
+          });
+        } else {
+          console.error("Refresh token not found. Cannot delete account.");
+        }
       }else{
         console.log("Cancel delete");
       }

@@ -59,12 +59,23 @@ export class AuthService {
 
     return this.http.post<any>(`${this.apiUrl}/logout`, { token: refreshToken }, { headers })
       .pipe(
-        tap(() => {
-          localStorage.removeItem('token');
-          localStorage.removeItem('currentUser');
-          this.tokenSubject.next(null);
+        tap({
+          next: () => {
+            this.clearAuthState();
+          },
+          error: (error) => {
+            console.log("Error during logout. Clearing tokens locally.", error);
+            this.clearAuthState();
+          }
         })
       );
+  }
+
+  clearAuthState(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('currentUser');
+    this.tokenSubject.next(null);
   }
 
   getRefreshToken(): Observable<any>{

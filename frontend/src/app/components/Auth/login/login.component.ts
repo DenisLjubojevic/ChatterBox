@@ -34,8 +34,6 @@ export class LoginComponent {
       this.loginForm.get('password')?.value
     ).subscribe({
       next: () => {
-        localStorage.setItem('username', this.loginForm.get('username')?.value);
-        localStorage.setItem('username', this.loginForm.get('password')?.value);
         this.notification.authentificationMessageSucces("Logged in!", "Successfully logged in redirecting to main page...")
       },
       error: (error) => {

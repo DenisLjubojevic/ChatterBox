@@ -1,0 +1,7 @@
+.account-settings-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 15%;
+  margin-right: 20%;
+}

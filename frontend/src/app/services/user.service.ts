@@ -138,8 +138,12 @@ export class UserService {
       .pipe(retry(1), catchError(this.errorHandl));
   }
 
-  deleteAccount(): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/user/delete-account`);
+  deleteAccount(): Observable<string> {
+    return this.http
+      .delete<string>(
+        `${this.baseUrl}/user/delete-account`,
+        { responseType: 'text' as 'json' }
+      );
   }
 
   errorHandl(error: any){
