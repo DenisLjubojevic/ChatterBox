@@ -9,23 +9,23 @@
 
     <div class="profile-details">
       <h2 *ngIf="!isEditMode">{{ user.name }}</h2>
-      <input *ngIf="isEditMode" [(ngModel)]="user.name" placeholder="Your name" class="profile-input">
+      <input *ngIf="isEditMode" [(ngModel)]="user.name" placeholder="{{'profileDetails.namePlaceholder' | translate}}" class="profile-input">
       <p *ngIf="!isEditMode">{{ user.displayedName}}</p>
-      <input *ngIf="isEditMode" [(ngModel)]="user.displayedName" placeholder="Displayed name" class="profile-input">
+      <input *ngIf="isEditMode" [(ngModel)]="user.displayedName" placeholder="{{'profileDetails.namePlaceholder' | translate}}" class="profile-input">
     </div>
 
     <div class="profile-info">
       <div class="profile-info-item">
-        <label>Email:</label>
+        <label>{{'profileDetails.email' | translate}}</label>
         <span *ngIf="!isEditMode">{{ user.email }}</span>
-        <input *ngIf="isEditMode" [(ngModel)]="user.email" placeholder="Email" class="profile-input" />
+        <input *ngIf="isEditMode" [(ngModel)]="user.email" placeholder="{{'profileDetails.emailPlaceholder' | translate}}" class="profile-input" />
       </div>
     </div>
 
     <div class="profile-actions">
-      <button *ngIf="!isEditMode" (click)="toggleEditMode()" class="edit-button">Edit Profile</button>
-      <button *ngIf="isEditMode" (click)="saveChanges()" class="save-button">Save Changes</button>
-      <button *ngIf="isEditMode" (click)="cancelEdit()" class="cancel-button">Cancel</button>
+      <button *ngIf="!isEditMode" (click)="toggleEditMode()" class="edit-button">{{'profileDetails.editButton' | translate}}</button>
+      <button *ngIf="isEditMode" (click)="saveChanges()" class="save-button">{{'profileDetails.saveButton' | translate}}</button>
+      <button *ngIf="isEditMode" (click)="cancelEdit()" class="cancel-button">{{'profileDetails.cancelButton' | translate}}</button>
     </div>
     <hr>
     <app-friend-list></app-friend-list>

@@ -1,27 +1,27 @@
 <div class="background">
   <div class="main-container">
     <h1>
-      {{"Sign up"}}
+      {{'signUpScreen.signUp' | translate}}
     </h1>
     <form [formGroup]="signupForm" (submit)="signUp()">
       <div>
-        <label>{{"Username: "}}</label>
+        <label>{{'signUpScreen.username' | translate}}</label>
         <input type="text" formControlName="name">
       </div>
       <div>
-        <label>{{"Password: "}}</label>
+        <label>{{'signUpScreen.password' | translate}}</label>
         <input type="password" formControlName="pass">
       </div>
       <div>
-        <label>{{"Email: "}}</label>
+        <label>{{'signUpScreen.email' | translate}}</label>
         <input type="email" formControlName="email">
       </div>
       <div>
-        <label>{{"Displayed name: "}}</label>
+        <label>{{'signUpScreen.displayedName' | translate}}</label>
         <input type="text" formControlName="displayedName">
       </div><br>
-      <button type="submit" [disabled]="signupForm.invalid">{{"Sign up"}}</button>
-      <button type="button" (click)="goBack()">{{"Back"}}</button>
+      <button type="submit" [disabled]="signupForm.invalid">{{'signUpScreen.signUpButton' | translate}}</button>
+      <button type="button" (click)="goBack()">{{'signUpScreen.backButton' | translate}}</button>
       <div *ngIf="signupError">
         <p style="color: red; font-weight: bold">{{ signupError }}</p>
       </div>

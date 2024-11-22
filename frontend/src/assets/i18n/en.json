@@ -1,0 +1,154 @@
+{
+  "loginScreen":{
+    "login": "Login",
+    "username": "Username: ",
+    "password": "password: ",
+    "loginButton": "Login",
+    "signUpButton": "Sign up"
+  },
+  "signUpScreen": {
+    "signUp": "Sign up",
+    "username": "Username: ",
+    "password": "Password: ",
+    "email": "Email: ",
+    "displayedName": "Displayed name: ",
+    "signUpButton": "Sign up",
+    "backButton": "Back"
+  },
+  "changePassDialog": {
+    "title": "Change Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "submitButton": "Submit",
+    "cancelButton": "Cancel"
+  },
+  "addChatRoom": {
+    "title": "Create new chat group",
+    "name": "Name: ",
+    "nameError": "Name is required and must be less than 20 characters.",
+    "description": "Description: ",
+    "descriptionError": "Description is required and can not exceed 255 characters.",
+    "type": "Type: ",
+    "addPicture": "Add picture: ",
+    "createButton": "Create chat group",
+    "cancelButton": "Cancel"
+  },
+  "chatDetails": {
+    "namePlaceholder": "Name",
+    "descPlaceholder": "Description",
+    "public": "Public",
+    "private": "Private",
+    "editButton": "Edit Chat",
+    "saveButton": "Save Changes",
+    "cancelButton": "Cancel",
+    "inviteFriends": "Invite Friends",
+    "leaveButton": "Leave Chat",
+    "deleteButton": "Delete Chat"
+  },
+  "chatRoomList": {
+    "joinNewGroup": "Join new group",
+    "type": "Type: ",
+    "description": "Description: ",
+    "createdBy": "Created By: ",
+    "members": "Members: ",
+    "detailsButton": "Details",
+    "closeButton": "Close"
+  },
+  "chatSearch": {
+    "searchPlaceholder": "Search for public groups...",
+    "createButton": "Create new chat",
+    "closeButton": "Close"
+  },
+  "messageInput": {
+    "inputPlaceholder": "Type your message...",
+    "sendButton": "Send"
+  },
+  "navBar": {
+    "profile": "Profile",
+    "chat": "Chat",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "friendList": {
+    "title": "Friends:",
+    "noFriendMessage": "You do not have friends, add someone to keep you company!",
+    "addFriendsButton": "Add Friends"
+  },
+  "friendRequests": {
+    "title": "Friend requests",
+    "noRequestMessage": "You don't have any friends requests!",
+    "accept": "Accept",
+    "reject": "Reject",
+    "chatInvTitle": "Chat Invites",
+    "noChatReqMessage": "You don't have any friends requests!",
+    "chatReqMessage": " sent you a chat invite for chat: "
+  },
+  "friendSearch": {
+    "inputPlaceholder": "Search for friends...",
+    "cantFindMessage": "Could not find any user under that name!",
+    "closeButton": "Close"
+  },
+  "profileDetails": {
+    "namePlaceholder": "Your name",
+    "displayedNamePlaceholder": "Displayed name",
+    "email": "Email: ",
+    "emailPlaceholder": "Email",
+    "editButton": "Edit Profile",
+    "saveButton": "Save Changes",
+    "cancelButton": "Cancel"
+  },
+  "accountSettings": {
+    "title": "Account Settings",
+    "changePassButton": "Change Password",
+    "deleteAccButton": "Delete Account"
+  },
+  "languageScreen": {
+    "title": "Languages",
+    "engButton": "English",
+    "croButton": "Croatian",
+    "applyButton": "Apply"
+  },
+  "privacySettings": {
+    "title": "Privacy Settings",
+    "onlineStatus": "Show Online Status",
+    "profileVisibility": "Profile Visible to Everyone",
+    "applyChanges": "Apply Privacy Changes"
+  },
+  "themeSettings": {
+    "title": "Change theme",
+    "greenLabel": "Green",
+    "brownLabel": "Brown",
+    "bluePinkLabel": "Blue/Pink",
+    "blackYellowLabel": "Black/Yellow",
+    "applyButton": "Apply"
+  },
+  "settings": {
+    "title": "User Settings",
+    "loadingSettings": "Loading settings...",
+    "saveButton": "Save All Changes"
+  },
+  "dialog": {
+    "title": {
+      "areYouSure": "Are you sure?",
+      "themeChange": "Theme change",
+      "languageChange": "Language change",
+      "privacyChange": "Privacy settings change",
+      "saveAll": "Save all settings"
+    },
+    "message": {
+      "updateTheme": "Do you really want to update your theme?",
+      "confirmTheme": "You have selected a new theme, to confirm it click on save all button!",
+      "updateLanguage": "Do you really want to change your language?",
+      "confirmLanguage": "You have selected a new language, to confirm it click on save all button!",
+      "updatePrivacy": "Do you really want to update your privacy settings?",
+      "confirmPrivacy": "You have updated your privacy settings, to confirm it click on save all button!",
+      "saveAll": "Do you want to save all your changes?",
+      "allSaved": "You have saved all of your settings!"
+    },
+    "button": {
+      "confirm": "Yes",
+      "cancel": "No",
+      "ok": "OK"
+    }
+  }
+}

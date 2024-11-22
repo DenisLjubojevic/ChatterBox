@@ -20,10 +20,10 @@
       <h2>{{ currentUser.displayedName }}</h2>
     </div>
     <ul class="sidebar-buttons">
-      <li><button (click)="openProfile()">Profile</button></li>
-      <li><button (click)="openChat()">Chat</button></li>
-      <li><button (click)="openSettings()" >Settings</button></li>
-      <li><button type="button" (click)="logout()">Logout</button></li>
+      <li><button (click)="openProfile()">{{'navBar.profile' | translate}}</button></li>
+      <li><button (click)="openChat()">{{'navBar.chat' | translate}}</button></li>
+      <li><button (click)="openSettings()" >{{'navBar.settings' | translate}}</button></li>
+      <li><button type="button" (click)="logout()">{{'navBar.logout' | translate}}</button></li>
     </ul>
   </div>
 </nav>

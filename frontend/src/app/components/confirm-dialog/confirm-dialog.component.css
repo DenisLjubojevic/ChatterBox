@@ -16,16 +16,13 @@ mat-dialog-actions{
 }
 
 .confirm-button{
-  background-color: green;
   width: 5vw;
 }
 
 .ok-button{
-  background-color: green;
   width: 10vw;
 }
 
 .cancel-button{
-  background-color: darkred;
   width: 5vw;
 }

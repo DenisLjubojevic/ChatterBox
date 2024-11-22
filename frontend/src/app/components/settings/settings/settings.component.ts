@@ -37,11 +37,11 @@ export class SettingsComponent implements OnInit{
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent , {
       width: "300px",
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to update your theme?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.message.updateTheme',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
@@ -52,15 +52,49 @@ export class SettingsComponent implements OnInit{
         const successDialog = this.confirmDialog.open(ConfirmDialogComponent, {
           width: "300px",
           data: {
-            title: 'Theme change',
-            message: 'You have selected a new theme, to confirm it click on save all button!',
+            title: 'dialog.title.themeChange',
+            message: 'dialog.title.confirmTheme',
+            isConfirm: false,
+            okText: 'dialog.title.ok'
+          }
+        })
+
+        successDialog.afterClosed().subscribe(() => {
+          console.log("updated theme - " + newTheme);
+          console.log(this.userSettings)
+        })
+      }
+    })
+  }
+
+  updateLanguage(newLanguage: string){
+    const dialogRef = this.confirmDialog.open(ConfirmDialogComponent , {
+      width: "300px",
+      data: {
+        title: 'Are you sure?',
+        message: 'Do you really want to change your language?',
+        isConfirm: true,
+        confirmText: 'Yes',
+        cancelText: 'No'
+      }
+    })
+
+    dialogRef.afterClosed().subscribe(res => {
+      if (res){
+        this.userSettings.language = newLanguage;
+
+        const successDialog = this.confirmDialog.open(ConfirmDialogComponent, {
+          width: "300px",
+          data: {
+            title: 'Language change',
+            message: 'You have selected a new language, to confirm it click on save all button!',
             isConfirm: false,
             okText: 'OK'
           }
         })
 
         successDialog.afterClosed().subscribe(() => {
-          console.log("updated theme - " + newTheme);
+          console.log("updated language - " + newLanguage);
           console.log(this.userSettings)
         })
       }

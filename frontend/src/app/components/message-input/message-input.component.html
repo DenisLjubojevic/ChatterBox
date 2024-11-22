@@ -1,4 +1,4 @@
 <div>
-  <input [(ngModel)]="messageContent" placeholder="Type your message...">
-  <button (click)="sendMessage()">Send</button>
+  <input [(ngModel)]="messageContent" placeholder="{{'messageInput.inputPlaceholder' | translate}}">
+  <button (click)="sendMessage()">{{'messageInput.sendButton' | translate}}</button>
 </div>

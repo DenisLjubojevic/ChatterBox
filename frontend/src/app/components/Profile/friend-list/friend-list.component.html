@@ -1,11 +1,11 @@
 <div class="friends-container">
   <div>
-    <h1>Friends:</h1>
+    <h1>{{'friendList.title' | translate}}</h1>
   </div>
 
   <div class="friends-container-list">
     <div *ngIf="!hasFriends">
-      <p>You do not have friends, add someone to keep you company!</p>
+      <p>{{'friendList.noFriendMessage' | translate}}</p>
     </div>
 
     <div *ngFor="let friend of friends" class="friends-list">
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div>
-    <button (click)="addFriend()">Add Friends</button>
+    <button (click)="addFriend()">{{'friendList.addFriendsButton' | translate}}</button>
   </div>
 </div>
 

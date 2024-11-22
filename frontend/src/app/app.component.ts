@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {ThemesService} from "./services/themes.service";
 import {UserSettingsService} from "./services/user-settings.service";
+import {TranslateService} from "@ngx-translate/core";
+import {LanguageService} from "./services/language.service";
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,7 @@ export class AppComponent implements OnInit{
 
   constructor(private router: Router,
               private theme: ThemesService,
+              private languageService: LanguageService,
               private userSettingsService: UserSettingsService) {  }
 
   ngOnInit() {
@@ -25,6 +28,7 @@ export class AppComponent implements OnInit{
         this.userSettingsService.settings$.subscribe(settings => {
           if (settings) {
             this.theme.loadTheme(settings.themeColor);
+            this.languageService.loadLanguage(settings.language);
           }
         });
       }

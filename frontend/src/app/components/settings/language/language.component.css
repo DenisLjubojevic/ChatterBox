@@ -1,0 +1,8 @@
+.language-container{
+  padding: 10px;
+  position: relative;
+}
+
+.privacy-settings>label{
+  margin-top: 10px;
+}

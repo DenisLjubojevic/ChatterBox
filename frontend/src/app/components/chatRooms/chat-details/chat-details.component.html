@@ -9,32 +9,32 @@
 
     <div class="chat-details">
       <h2 *ngIf="!isEditMode">{{ chatRoom.name }}</h2>
-      <input *ngIf="isEditMode" [(ngModel)]="chatRoom.name" placeholder="Name" class="chat-input">
+      <input *ngIf="isEditMode" [(ngModel)]="chatRoom.name" placeholder="{{'chatDetails.namePlaceholder' | translate}}" class="chat-input">
       <p *ngIf="!isEditMode">{{ chatRoom.description}}</p>
-      <input *ngIf="isEditMode" [(ngModel)]="chatRoom.description" placeholder="Description" class="chat-input">
+      <input *ngIf="isEditMode" [(ngModel)]="chatRoom.description" placeholder="{{'chatDetails.descPlaceholder' | translate}}" class="chat-input">
     </div>
 
     <div class="chat-info">
       <div class="chat-info-item">
         <label>Type:</label>
         <span *ngIf="!isEditMode">{{ chatRoom.type }}</span>
-        <select *ngIf="isEditMode" [(ngModel)]="chatRoom.type" placeholder="Type" class="chat-input">
-          <option [value]="'Public'" [selected]="chatRoom.type === 'Public'">Public</option>
-          <option [value]="'Private'" [selected]="chatRoom.type === 'Private'">Private</option>
+        <select *ngIf="isEditMode" [(ngModel)]="chatRoom.type" class="chat-input">
+          <option [value]="'Public'" [selected]="chatRoom.type === 'Public'">{{'chatDetails.public' | translate}}</option>
+          <option [value]="'Private'" [selected]="chatRoom.type === 'Private'">{{'chatDetails.private' | translate}}</option>
         </select>
       </div>
     </div>
 
     <div class="chat-actions">
-      <button *ngIf="!isEditMode && isCreator()" (click)="toggleEditMode()" class="edit-button">Edit Chat</button>
-      <button *ngIf="isEditMode" (click)="saveChanges()" class="save-button">Save Changes</button>
-      <button *ngIf="isEditMode" (click)="cancelEdit()" class="cancel-button">Cancel</button>
+      <button *ngIf="!isEditMode && isCreator()" (click)="toggleEditMode()" class="edit-button">{{'chatDetails.editButton' | translate}}</button>
+      <button *ngIf="isEditMode" (click)="saveChanges()" class="save-button">{{'chatDetails.saveButton' | translate}}</button>
+      <button *ngIf="isEditMode" (click)="cancelEdit()" class="cancel-button">{{'chatDetails.cancelButton' | translate}}</button>
     </div>
     <hr>
     <div class="chat-actions">
-      <button (click)="inviteFriends()" class="cancel-button">Invite friends</button>
-      <button (click)="leaveGroup()" class="cancel-button">Leave chat</button>
-      <button (click)="deleteChatRoom()" *ngIf="isCreator()" class="save-button">Delete chat</button>
+      <button (click)="inviteFriends()" class="cancel-button">{{'chatDetails.inviteFriends' | translate}}</button>
+      <button (click)="leaveGroup()" class="cancel-button">{{'chatDetails.leaveButton' | translate}}</button>
+      <button (click)="deleteChatRoom()" *ngIf="isCreator()" class="save-button">{{'chatDetails.deleteButton' | translate}}</button>
     </div>
   </div>
 

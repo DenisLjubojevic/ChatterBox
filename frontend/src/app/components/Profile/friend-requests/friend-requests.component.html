@@ -2,19 +2,19 @@
   <div class="container">
     <div>
       <h1>
-        Friend requests
+        {{'friendRequests.title' | translate}}
       </h1>
       <br>
     </div>
     <div *ngIf="friendRequests.length == 0">
       <div>
-        <p>You don't have any friends requests!</p>
+        <p>{{'friendRequests.noRequestMessage' | translate}}</p>
       </div>
     </div>
     <div *ngFor="let request of friendRequests">
       <div class="sender-name">{{ request.sender.displayedName }}</div>
-      <button (click)="acceptFriendRequest(request.id)">Accept</button>
-      <button (click)="denyFriendRequest(request.id)">Reject</button>
+      <button (click)="acceptFriendRequest(request.id)">{{'friendRequests.accept' | translate}}</button>
+      <button (click)="denyFriendRequest(request.id)">{{'friendRequests.reject' | translate}}</button>
 
       <hr>
       <br><br>
@@ -22,19 +22,19 @@
 
     <div>
       <h1>
-        Chat invites
+        {{'friendRequests.chatInvTitle' | translate}}
       </h1>
       <br>
     </div>
     <div *ngIf="chatInvites.length == 0">
       <div>
-        <p>You don't have any friends requests!</p>
+        <p>{{'friendRequests.noChatReqMessage' | translate}}</p>
       </div>
     </div>
     <div *ngFor="let inv of chatInvites">
-      <div class="sender-name">{{ inv.sender.displayedName }} sent you a chat invite for chat: '{{ inv.chat.name }}'</div>
-      <button (click)="acceptChatInvite(inv.id)">Accept</button>
-      <button (click)="denyChatInvite(inv.id)">Reject</button>
+      <div class="sender-name">{{ inv.sender.displayedName }} {{'friendRequests.chatReqMessage' | translate}} '{{ inv.chat.name }}'</div>
+      <button (click)="acceptChatInvite(inv.id)">{{'friendRequests.accept' | translate}}</button>
+      <button (click)="denyChatInvite(inv.id)">{{'friendRequests.reject' | translate}}</button>
 
   </div>
 </div>

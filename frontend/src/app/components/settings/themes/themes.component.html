@@ -1,42 +1,29 @@
 <div>
-  <h3>Change theme</h3>
+  <h3>{{'themeSettings.title' | translate}}</h3>
 </div>
 
 <div class="theme-container">
   <div class="theme-item" [ngClass]="{'selected': themeColor === 'green'}" (click)="previewTheme('green')">
     <div class="indicator-green"></div>
-    <label>Green</label>
+    <label>{{'themeSettings.greenLabel' | translate}}</label>
   </div>
 
   <div class="theme-item" [ngClass]="{'selected': themeColor === 'brown'}" (click)="previewTheme('brown')">
     <div class="indicator-brown"></div>
-    <label>Brown</label>
+    <label>{{'themeSettings.brownLabel' | translate}}</label>
   </div>
 
   <div class="theme-item" [ngClass]="{'selected': themeColor === 'bluePink'}" (click)="previewTheme('bluePink')">
     <div class="indicator-blue-pink"></div>
-    <label>Blue/Pink</label>
+    <label>{{'themeSettings.bluePinkLabel' | translate}}</label>
   </div>
 
   <div class="theme-item" [ngClass]="{'selected': themeColor === 'blackYellow'}" (click)="previewTheme('blackYellow')">
     <div class="indicator-black-yellow"></div>
-    <label>Black/Yellow</label>
+    <label>{{'themeSettings.blackYellowLabel' | translate}}</label>
   </div>
 </div>
 
 <div>
-  <button (click)="applyTheme()">Apply</button>
+  <button (click)="applyTheme()">{{'themeSettings.applyButton' | translate}}</button>
 </div>
-
-<!--
-    <div>
-      <h2>Language</h2>
-      <select [(ngModel)]="settings.language" (change)="updateLanguage()">
-        <option value="en">English</option>
-        <option value="es">Spanish</option>
-        <option value="fr">French</option>
-        <option value="de">German</option>
-      </select>
-    </div>
-    -->
-

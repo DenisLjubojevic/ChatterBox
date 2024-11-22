@@ -1,16 +1,22 @@
 <div class="background">
   <div class="settings-container">
-    <h1>User Settings</h1>
+    <h1>{{'settings.title' | translate}}</h1>
 
     <hr>
 
     <div *ngIf="!isSettingsLoaded" class="loading">
-      <p>Loading settings...</p>
+      <p>{{'settings.loadingSettings' | translate}}</p>
     </div>
 
     <app-themes *ngIf="isSettingsLoaded" [themeColor]="userSettings.themeColor"
     (themeColorChange)="updateThemeColor($event)">
     </app-themes>
+
+    <hr>
+
+    <app-language *ngIf="isSettingsLoaded" [language]="userSettings.language"
+    (languageChange)="updateLanguage($event)">
+    </app-language>
 
     <hr>
 
@@ -27,6 +33,6 @@
 
     <hr>
 
-    <button (click)="saveAllSettings()" class="save-button">Save All Changes</button>
+    <button (click)="saveAllSettings()" class="save-button">{{'settings.saveButton' | translate}}</button>
   </div>
 </div>

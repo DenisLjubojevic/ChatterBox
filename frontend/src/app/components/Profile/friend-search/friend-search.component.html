@@ -2,7 +2,7 @@
   <div class="container-main">
     <input
       type="text"
-      placeholder="Search for friends..."
+      placeholder="{{'friendSearch.inputPlaceholder' | translate}}"
       [(ngModel)]="searchQuery"
       (ngModelChange)="handleSearchActions()">
 
@@ -18,10 +18,10 @@
     </div>
 
     <div *ngIf="!isFound" class="search-results">
-      <p>Could not find any user under that name!</p>
+      <p>{{'friendSearch.cantFindMessage' | translate}}</p>
     </div>
   </div>
 
-  <button (click)="closeDialog()" class="close-friends-search-button">Close</button>
+  <button (click)="closeDialog()" class="close-friends-search-button">{{'friendSearch.closeButton' | translate}}</button>
 </div>
 

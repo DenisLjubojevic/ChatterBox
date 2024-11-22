@@ -1,10 +1,8 @@
 import {Component, NgZone, OnInit} from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
-import {HttpClient} from "@angular/common/http";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ChatRoomsServiceService} from "../../../services/chat-rooms-service.service";
 import {ChatRoom} from "../../../models/ChatRoom";
-import {ChatRoomComponent} from "../chat-room/chat-room.component";
 import {switchMap} from "rxjs";
 
 @Component({

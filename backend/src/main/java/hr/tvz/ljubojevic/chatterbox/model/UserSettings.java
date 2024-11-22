@@ -27,5 +27,5 @@ public class UserSettings {
     private String themeColor = "green";
 
     @Column(nullable = false)
-    private String language = "eng";
+    private String language = "en";
 }

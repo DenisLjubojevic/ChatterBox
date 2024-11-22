@@ -1,0 +1,154 @@
+{
+  "loginScreen":{
+    "login": "Prijava",
+    "username": "Korisničko ime: ",
+    "password": "Lozinka: ",
+    "loginButton": "Prijavi se",
+    "signUpButton": "Registriraj se"
+  },
+  "signUpScreen": {
+    "signUp": "Registriraj se",
+    "username": "Korisničko ime: ",
+    "password": "Lozinka: ",
+    "email": "Email: ",
+    "displayedName": "Prikazano ime: ",
+    "signUpButton": "Registriraj se",
+    "backButton": "Nazad"
+  },
+  "changePassDialog": {
+    "title": "Promijeni lozinku",
+    "newPassword": "Nova lozinka",
+    "confirmPassword": "Potvrdi lozinku",
+    "submitButton": "Potvrdi",
+    "cancelButton": "Zatvori"
+  },
+  "addChatRoom": {
+    "title": "Stovrite novu grupu",
+    "name": "Ime: ",
+    "nameError": "Ime je obavezno i mora imati manje od 20 znakova.",
+    "description": "Opis: ",
+    "descriptionError": "Opis je obavezan i ne smije imati više od 25 znakova.",
+    "type": "Vrsta: ",
+    "addPicture": "Dodaj sliku: ",
+    "createButton": "Stvori grupu",
+    "cancelButton": "Zatvori"
+  },
+  "chatDetails": {
+    "namePlaceholder": "Ime",
+    "descPlaceholder": "Opis",
+    "public": "Javno",
+    "private": "Privatno",
+    "editButton": "Uredi razgovor",
+    "saveButton": "Spremi promjene",
+    "cancelButton": "Zatvori",
+    "inviteFriends": "Pozovi prijetelje",
+    "leaveButton": "Izađi iz grupe",
+    "deleteButton": "Obriši grupu"
+  },
+  "chatRoomList": {
+    "joinNewGroup": "Pridruži se novoj grupi",
+    "type": "Vrsta: ",
+    "description": "Opis: ",
+    "createdBy": "Napravio: ",
+    "members": "Članovi: ",
+    "detailsButton": "Detalji",
+    "closeButton": "Zatvori"
+  },
+  "chatSearch": {
+    "searchPlaceholder": "Pretraži javne grupe...",
+    "createButton": "Napravite novu grupu",
+    "closeButton": "Zatvori"
+  },
+  "messageInput": {
+    "inputPlaceholder": "Upišite svoju poruku...",
+    "sendButton": "Pošalji"
+  },
+  "navBar": {
+    "profile": "Profil",
+    "chat": "Razgovor",
+    "settings": "Postavke",
+    "logout": "Odjava"
+  },
+  "friendList": {
+    "title": "Prijatelji:",
+    "noFriendMessage": "Nemate niti jednog prijatelja, dodaj nekoga da vam pravi društvo!",
+    "addFriendsButton": "Dodaj Prijatelja"
+  },
+  "friendRequests": {
+    "title": "Zahtjevi za prijateljstvo",
+    "noRequestMessage": "Nemate niti jedan zahtjev za prijateljstvo!",
+    "accept": "Prihvati",
+    "reject": "Odbi",
+    "chatInvTitle": "Zahtjevi za pristup razgovoru",
+    "noChatReqMessage": "Nemate niti jedan zahtjev za pritup razgovoru!",
+    "chatReqMessage": " vam je posalo zahtjev za pristup grupi: "
+  },
+  "friendSearch": {
+    "inputPlaceholder": "Pretraži prijatelje...",
+    "cantFindMessage": "Ne možemo naći korisnike pod tim imenom!",
+    "closeButton": "Zatvori"
+  },
+  "profileDetails": {
+    "namePlaceholder": "Tvoje ime",
+    "displayedNamePlaceholder": "Prikazano ime",
+    "email": "Email: ",
+    "emailPlaceholder": "Email",
+    "editButton": "Uredi Profil",
+    "saveButton": "Spremi Promjene",
+    "cancelButton": "Zatvori"
+  },
+  "accountSettings": {
+    "title": "Postavke Računa",
+    "changePassButton": "Pormjeni Zaporku",
+    "deleteAccButton": "Izbriši Račun"
+  },
+  "languageScreen": {
+    "title": "Jezici",
+    "engButton": "Engleski",
+    "croButton": "Hrvatski",
+    "applyButton": "Primijeni"
+  },
+  "privacySettings": {
+    "title": "Postavke Privatnosti",
+    "onlineStatus": "Prikaži online status",
+    "profileVisibility": "Vidljivost profila svima",
+    "applyChanges": "Primijeni postavke privatnosti"
+  },
+  "themeSettings": {
+    "title": "Promjeni Temu",
+    "greenLabel": "Zelena",
+    "brownLabel": "Smeđa",
+    "bluePinkLabel": "Plavo/Roza",
+    "blackYellowLabel": "Crno/Žuta",
+    "applyButton": "Primijeni"
+  },
+  "settings": {
+    "title": "Postavke Korisnika",
+    "loadingSettings": "Učitavanje postavki...",
+    "saveButton": "Spremi sve promjene"
+  },
+  "dialog": {
+    "title": {
+      "areYouSure": "Jesi li siguran?",
+      "themeChange": "Promjena teme",
+      "languageChange": "Language change",
+      "privacyChange": "Privacy settings change",
+      "saveAll": "Save all settings"
+    },
+    "message": {
+      "updateTheme": "Da li stvarno želiš promijeniti temu?",
+      "confirmTheme": "You have selected a new theme, to confirm it click on save all button!",
+      "updateLanguage": "Do you really want to change your language?",
+      "confirmLanguage": "You have selected a new language, to confirm it click on save all button!",
+      "updatePrivacy": "Do you really want to update your privacy settings?",
+      "confirmPrivacy": "You have updated your privacy settings, to confirm it click on save all button!",
+      "saveAll": "Do you want to save all your changes?",
+      "allSaved": "You have saved all of your settings!"
+    },
+    "button": {
+      "confirm": "Da",
+      "cancel": "Ne",
+      "ok": "OK"
+    }
+  }
+}

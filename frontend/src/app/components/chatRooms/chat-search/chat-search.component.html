@@ -2,7 +2,7 @@
   <div class="container-main">
     <input
       type="text"
-      placeholder="Search for public groups..."
+      placeholder="{{'chatSearch.searchPlaceholder' | translate}}"
       [(ngModel)]="searchQuery"
       (ngModelChange)="onSearch()">
 
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <button (click)="openCreateGroup()">Create new group</button>
-  <button (click)="closeDialog()" class="close-search-button">Close</button>
+  <button (click)="openCreateGroup()">{{'chatSearch.createButton' | translate}}</button>
+  <button (click)="closeDialog()" class="close-search-button">{{'chatSearch.closeButton' | translate}}</button>
 </div>
 

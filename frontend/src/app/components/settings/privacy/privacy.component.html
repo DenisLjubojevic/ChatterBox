@@ -1,18 +1,24 @@
 <div class="privacy-settings">
-  <h3>Privacy Settings</h3>
+  <h3>{{'privacySettings.title' | translate}}</h3>
   <br>
   <div>
     <label>
       <input type="checkbox" [(ngModel)]="privacy.showOnlineStatus" />
-      Show Online Status
+      {{'privacySettings.onlineStatus' | translate}}
+      <span class="info-icon" title="Turning these off allows you to stay offline. Other people wouldn't be able to see if you are online.">
+        <i class="fa-solid fa-circle-info"></i>
+      </span>
     </label>
   </div>
   <div>
     <label>
       <input type="checkbox" [(ngModel)]="privacy.profileVisibility" />
-      Profile Visible to Everyone
+      {{'privacySettings.profileVisibility' | translate}}
+      <span class="info-icon" title="Turning these off allows you to stay hidden. Other people wouldn't be able to see your profile.">
+        <i class="fa-solid fa-circle-info"></i>
+      </span>
     </label>
   </div>
   <br>
-  <button  (click)="emitPrivacySettings()">Apply Privacy Changes</button>
+  <button  (click)="emitPrivacySettings()">{{'privacySettings.applyChanges' | translate}}</button>
 </div>

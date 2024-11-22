@@ -1,18 +1,18 @@
 <div class="container">
   <mat-dialog-content>
-    <h2> {{ data.title }}</h2>
-    <p> {{ data.message }} </p>
+    <h2> {{ translatedTitle  }}</h2>
+    <p> {{ translatedMessage  }} </p>
   </mat-dialog-content>
 
   <mat-dialog-actions>
     <button *ngIf="data.isConfirm" mat-button (click)="onConfirm()" class="confirm-button">
-      {{ data.confirmText || 'Confirm' }}
+      {{ translatedConfirmText }}
     </button>
     <button *ngIf="data.isConfirm" mat-button (click)="onCancel()" class="cancel-button">
-      {{ data.cancelText || 'Cancel' }}
+      {{ translatedCancelText }}
     </button>
     <button *ngIf="!data.isConfirm" mat-button (click)="onClose()" class="ok-button">
-      {{ data.okText || 'OK' }}
+      {{ translatedOkText }}
     </button>
   </mat-dialog-actions>
 </div>

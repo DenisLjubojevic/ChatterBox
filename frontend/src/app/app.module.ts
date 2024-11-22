@@ -31,7 +31,13 @@ import { PrivacyComponent } from './components/settings/privacy/privacy.componen
 import { AccountSettingsComponent } from './components/settings/account-settings/account-settings.component';
 import { ChangePasswordDialogComponent } from './components/change-password-dialog/change-password-dialog.component';
 import {MatInputModule} from "@angular/material/input";
+import { LanguageComponent } from './components/settings/language/language.component';
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +61,8 @@ import {MatInputModule} from "@angular/material/input";
     SettingsComponent,
     PrivacyComponent,
     AccountSettingsComponent,
-    ChangePasswordDialogComponent
+    ChangePasswordDialogComponent,
+    LanguageComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,17 @@ import {MatInputModule} from "@angular/material/input";
     MatDialogModule,
     MatButtonModule,
     MatBadgeModule,
-    MatInputModule
+    MatInputModule,
+    TranslateModule.forRoot(
+      {
+        loader:{
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+        },
+        defaultLanguage: 'en'
+      }
+    )
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

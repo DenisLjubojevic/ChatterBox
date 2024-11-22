@@ -53,4 +53,8 @@ export class ChangePasswordDialogComponent {
       })
     }
   }
+
+  cancelChanges(){
+    this.dialogRef.close();
+  }
 }

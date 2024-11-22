@@ -1,10 +1,10 @@
 <div class="container wrapper wrapper2">
   <div class="row">
     <div class="col-md-12">
-      <h3>Create new chat group</h3>
+      <h3>{{'addChatRoom.title' | translate}}</h3>
       <form [formGroup]="chatRoomForm" (ngSubmit)="submitForm()" novalidate>
         <div class="form-group">
-          <label for="name">Name: </label>
+          <label for="name">{{'addChatRoom.name' | translate}}</label>
           <input
             id="name"
             type="text"
@@ -15,11 +15,11 @@
             [ngClass]="{'invalid-border': chatRoomForm.get('name')?.invalid && chatRoomForm.get('name')?.touched }"
           >
           <div *ngIf="chatRoomForm.get('name')?.invalid && chatRoomForm.get('name')?.touched" class="error-message">
-            Name is required and must be less than 20 characters.
+            {{'addChatRoom.nameError' | translate}}
           </div>
         </div>
         <div class="form-group">
-          <label for="description">Description: </label>
+          <label for="description">{{'addChatRoom.description' | translate}}</label>
           <input
             id="description"
             type="text"
@@ -30,23 +30,23 @@
             [ngClass]="{'invalid-border': chatRoomForm.get('description')?.invalid && chatRoomForm.get('description')?.touched}"
           >
           <div *ngIf="chatRoomForm.get('description')?.invalid && chatRoomForm.get('description')?.touched" class="error-message">
-            Description is required and can not exceed 255 characters.
+            {{'addChatRoom.descriptionError' | translate}}
           </div>
         </div>
         <div class="form-group">
-          <label for="type">Type: </label>
+          <label for="type">{{'addChatRoom.type' | translate}}</label>
           <select formControlName="type" class="form-control" id="type" [ngModel]='nrSelect'>
             <option value="Public" selected>Public</option>
             <option value="Private">Private</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="pictureUrl">Add picture: </label>
+          <label for="pictureUrl">{{'addChatRoom.addPicture' | translate}}</label>
           <input formControlName="pictureUrl" type="file" (change)="onFileSelected($event)" class="form-control" id="pictureUrl">
         </div>
 
-        <button type="submit" class="btn btn-primary">Create chat group</button>
-        <button type="button" (click)="close()" class="btn btn-secondary">Cancel</button>
+        <button type="submit" class="btn btn-primary">{{'addChatRoom.createButton' | translate}}</button>
+        <button type="button" (click)="close()" class="btn btn-secondary">{{'addChatRoom.cancelButton' | translate}}</button>
       </form>
     </div>
   </div>
