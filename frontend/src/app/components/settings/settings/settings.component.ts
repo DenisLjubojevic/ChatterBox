@@ -55,7 +55,7 @@ export class SettingsComponent implements OnInit{
             title: 'dialog.title.themeChange',
             message: 'dialog.title.confirmTheme',
             isConfirm: false,
-            okText: 'dialog.title.ok'
+            okText: 'dialog.button.ok'
           }
         })
 
@@ -71,11 +71,11 @@ export class SettingsComponent implements OnInit{
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent , {
       width: "300px",
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to change your language?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.message.updateLanguage',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
@@ -86,10 +86,10 @@ export class SettingsComponent implements OnInit{
         const successDialog = this.confirmDialog.open(ConfirmDialogComponent, {
           width: "300px",
           data: {
-            title: 'Language change',
-            message: 'You have selected a new language, to confirm it click on save all button!',
+            title: 'dialog.title.languageChange',
+            message: 'dialog.message.confirmLanguage',
             isConfirm: false,
-            okText: 'OK'
+            okText: 'dialog.button.ok'
           }
         })
 
@@ -105,11 +105,11 @@ export class SettingsComponent implements OnInit{
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent , {
       width: "300px",
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to update your privacy settings?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.message.updatePrivacy',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
@@ -121,10 +121,10 @@ export class SettingsComponent implements OnInit{
         const successDialog = this.confirmDialog.open(ConfirmDialogComponent, {
           width: "300px",
           data: {
-            title: 'Privacy settings change',
-            message: 'You have updated your privacy settings, to confirm it click on save all button!',
+            title: 'dialog.title.privacyChange',
+            message: 'dialog.message.confirmPrivacy',
             isConfirm: false,
-            okText: 'OK'
+            okText: 'dialog.button.ok'
           }
         })
 
@@ -140,11 +140,11 @@ export class SettingsComponent implements OnInit{
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent , {
       width: "300px",
       data: {
-        title: 'Are you done?',
-        message: 'Do you want to save all your changes?',
+        title: 'dialog.title.saveAll',
+        message: 'dialog.message.saveAll',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
@@ -155,10 +155,10 @@ export class SettingsComponent implements OnInit{
         const successDialog = this.confirmDialog.open(ConfirmDialogComponent, {
           width: "300px",
           data: {
-            title: 'All settings saved',
-            message: 'You have saved all of your settings!',
+            title: 'dialog.title.allSaved',
+            message: 'dialog.message.allSaved',
             isConfirm: false,
-            okText: 'OK'
+            okText: 'dialog.button.ok'
           }
         })
 

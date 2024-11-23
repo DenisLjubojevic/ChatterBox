@@ -52,10 +52,10 @@ export class FriendRequestsComponent implements OnInit{
       const dialogRef = this.confirmDialog.open(ConfirmDialogComponent, {
         width: "300px",
         data: {
-          title: 'Friend request',
-          message: 'You accepted friend request!',
+          title: 'dialog.title.friendRequest',
+          message: 'dialog.message.friendRequestAccept',
           isConfirm: false,
-          okText: 'OK'
+          okText: 'dialog.button.ok'
         }
       })
 
@@ -70,10 +70,10 @@ export class FriendRequestsComponent implements OnInit{
       const dialogRef = this.confirmDialog.open(ConfirmDialogComponent, {
         width: "300px",
         data: {
-          title: 'Friend request',
-          message: 'You rejected friend request!',
+          title: 'dialog.title.friendRequest',
+          message: 'dialog.message.friendRequestReject',
           isConfirm: false,
-          okText: 'OK'
+          okText: 'dialog.title.ok'
         }
       })
 
@@ -88,10 +88,10 @@ export class FriendRequestsComponent implements OnInit{
       const dialogRef = this.confirmDialog.open(ConfirmDialogComponent, {
         width: "300px",
         data: {
-          title: 'Chat invitation',
-          message: 'You accepted chat invitation!',
+          title: 'dialog.title.chatInvite',
+          message: 'dialog.message.chatInviteAccept',
           isConfirm: false,
-          okText: 'OK'
+          okText: 'dialog.button.ok'
         }
       })
 
@@ -106,10 +106,10 @@ export class FriendRequestsComponent implements OnInit{
       const dialogRef = this.confirmDialog.open(ConfirmDialogComponent, {
         width: "300px",
         data: {
-          title: 'Chat invitation',
-          message: 'You rejected chat invitation!',
+          title: 'dialog.title.chatInvite',
+          message: 'dialog.title.chatInviteReject',
           isConfirm: false,
-          okText: 'OK'
+          okText: 'dialog.button.ok'
         }
       })
 

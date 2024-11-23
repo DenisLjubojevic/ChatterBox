@@ -111,7 +111,9 @@
   "privacySettings": {
     "title": "Privacy Settings",
     "onlineStatus": "Show Online Status",
+    "onlineStatusInfo": "Turning these off allows you to stay offline. Other people wouldn't be able to see if you are online.",
     "profileVisibility": "Profile Visible to Everyone",
+    "profileVisibilityInfo": "Turning these off allows you to stay hidden. Other people wouldn't be able to see your profile.",
     "applyChanges": "Apply Privacy Changes"
   },
   "themeSettings": {
@@ -133,7 +135,13 @@
       "themeChange": "Theme change",
       "languageChange": "Language change",
       "privacyChange": "Privacy settings change",
-      "saveAll": "Save all settings"
+      "saveAll": "Save all settings",
+      "allSaved": "All settings saved",
+      "passChanged": "Password changed",
+      "leftChat": "Left chat",
+      "joinChat": "Join chat",
+      "friendRequest": "Friend request",
+      "chatInvite": "Chat invitation"
     },
     "message": {
       "updateTheme": "Do you really want to update your theme?",
@@ -143,12 +151,48 @@
       "updatePrivacy": "Do you really want to update your privacy settings?",
       "confirmPrivacy": "You have updated your privacy settings, to confirm it click on save all button!",
       "saveAll": "Do you want to save all your changes?",
-      "allSaved": "You have saved all of your settings!"
+      "allSaved": "You have saved all of your settings!",
+      "changePassword": "Do you really want to change your password?",
+      "passChanged": "You have successfully changed your password!",
+      "leaveGroup": "Do you really want to leave this group?",
+      "leftChat": "You have left the chat!",
+      "deleteChat": "Do you really want to delete this group?",
+      "dateToday": "Today at {{time}}",
+      "dateYesterday": "Yesterday at {{time}}",
+      "usualDate": "On {{date}} at {{time}}",
+      "joinGroup": "Do you really want to join this group?",
+      "joinChat": "You have joined a new chat",
+      "messageToday": "Today",
+      "messageYesterday": "Yesterday",
+      "removeFriend": "Do you really want to remove him as your friend?",
+      "friendRequestAccept": "You accepted friend request!",
+      "friendRequestReject": "You rejected friend request!",
+      "chatInviteAccept": "You accepted chat invitation!",
+      "chatInviteReject": "You rejected chat invitation!",
+      "chatInvite": "Do you really want to invite friend to chat?",
+      "chatInviteSucces": "You have sent chat invite",
+      "friendInvite": "Do you really want to add new friend?",
+      "friendInviteSuccess": "You have sent friend request",
+      "deleteAccount": "Do you really want to delete your account?"
     },
     "button": {
       "confirm": "Yes",
       "cancel": "No",
       "ok": "OK"
     }
+  },
+  "notifications": {
+    "loginSuccessTitle": "Logged in!",
+    "loginSuccessMessage": "Successfully logged in. Redirecting to main page...",
+    "signupSuccessTitle": "Account created!",
+    "signupSuccessMessage": "Successfully created account, redirecting to login...",
+    "logoutSuccessTitle": "Logged out!",
+    "logoutSuccessMessage": "You have been logged out. Redirecting to login page...",
+    "deleteAccSuccessTitle": "Account deleted!",
+    "deleteAccSuccessMessage": "Your account has been successfully deleted!"
+  },
+  "invalid": {
+    "login": "Invalid username or password",
+    "singUp": "Please enter all the informations!"
   }
 }

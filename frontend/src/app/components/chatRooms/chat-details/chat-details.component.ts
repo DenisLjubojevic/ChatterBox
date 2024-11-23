@@ -120,26 +120,25 @@ export class ChatDetailsComponent {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: "300px",
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to leave this group?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.title.leaveGroup',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
     dialogRef.afterClosed().subscribe(res => {
       if (res && this.currentUser){
-        this.chatService.leaveChatRoom(this.currentUser.id, this.chatRoom.id).subscribe(data => {
-          console.log('Left chat:', data);
+        this.chatService.leaveChatRoom(this.currentUser.id, this.chatRoom.id).subscribe(() => {
 
           const successDialog = this.dialog.open(ConfirmDialogComponent, {
             width: "300px",
             data: {
-              title: 'Left chat',
-              message: data,
+              title: 'dialog.title.leftChat',
+              message: 'dialog.message.leftChat',
               isConfirm: false,
-              okText: 'OK'
+              okText: 'dialog.button.ok'
             }
           })
 
@@ -157,17 +156,16 @@ export class ChatDetailsComponent {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: "300px",
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to delete this group?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.message.deleteChat',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
     dialogRef.afterClosed().subscribe(res => {
       if (res){
-        console.log("DELETING...");
         this.chatService.deleteChatRoom(this.chatRoom.id).subscribe(() => {
           this.router.navigate(["/chat"]);
         });

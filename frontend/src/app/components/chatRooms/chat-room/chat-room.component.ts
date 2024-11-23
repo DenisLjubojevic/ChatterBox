@@ -13,29 +13,12 @@ import {ChatRoomsServiceService} from "../../../services/chat-rooms-service.serv
   templateUrl: './chat-room.component.html',
   styleUrls: ['./chat-room.component.css']
 })
-export class ChatRoomComponent implements OnDestroy{
+export class ChatRoomComponent{
   @Input() messages: Message[] = [];
   @Input() chatRoom!: ChatRoom;
 
   constructor(private webSocketService: WebSocketService,
               private userSrevice: UserService) {
-  }
-
-
-  ngOnDestroy() {
-  }
-
-  pushModelRequestToMessages(messageModel: ModelRequest){
-    this.userSrevice.getUserByUsername(messageModel.senderUsername).subscribe(user => {
-      const message = {
-        id: 0,
-        content: messageModel.messageContent,
-        timestamp: messageModel.timestamp,
-        user: user,
-        chatRoom: this.chatRoom
-      }
-      this.messages.push(message);
-    })
   }
 
   handleMessage(content: any){

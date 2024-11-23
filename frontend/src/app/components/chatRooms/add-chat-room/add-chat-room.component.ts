@@ -1,4 +1,4 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ChatRoomsServiceService} from "../../../services/chat-rooms-service.service";
@@ -40,7 +40,6 @@ export class AddChatRoomComponent{
   }
 
   submitForm(){
-    console.log("ADD Chat");
     if (this.chatRoomForm.invalid) {
       this.chatRoomForm.markAllAsTouched();
       return;
@@ -48,19 +47,15 @@ export class AddChatRoomComponent{
 
     const chatRoom : ChatRoom = this.chatRoomForm.value;
     if (this.selectedFile){
-      console.log("ADD Chat - files selected");
       this.chatRoomService.uploadNewPicture(this.selectedFile).pipe(
         switchMap((chatPictureUrl: string) => {
-          console.log("ADD Chat picture url - " + chatPictureUrl);
           chatRoom.pictureUrl = chatPictureUrl;
           return this.chatRoomService.createChatRoom(chatRoom);
         })
       ).subscribe(res => {
-        console.log("ADD Chat after - " + res);
         this.dialogRef.close(true);
       })
     }else{
-      console.log("ADD Chat - no files selected")
       this.chatRoomService.createChatRoom(chatRoom).subscribe(res => {
         this.dialogRef.close(true);
       })

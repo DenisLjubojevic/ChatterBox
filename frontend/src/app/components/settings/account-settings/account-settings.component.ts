@@ -3,7 +3,6 @@ import {MatDialog} from "@angular/material/dialog";
 import {UserService} from "../../../services/user.service";
 import {ChangePasswordDialogComponent} from "../../change-password-dialog/change-password-dialog.component";
 import {ConfirmDialogComponent} from "../../confirm-dialog/confirm-dialog.component";
-import {AuthService} from "../../../services/auth/auth.service";
 import {NotificationService} from "../../../services/auth/notification.service";
 
 @Component({
@@ -15,7 +14,6 @@ export class AccountSettingsComponent {
 
   constructor(private dialog: MatDialog,
               private userService: UserService,
-              private authService: AuthService,
               private notification: NotificationService) {
   }
 
@@ -27,11 +25,11 @@ export class AccountSettingsComponent {
     const dialogRef = this.dialog.open(ConfirmDialogComponent , {
       width: "300px",
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to delete your account?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.message.deleteAccount',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
@@ -45,10 +43,7 @@ export class AccountSettingsComponent {
               localStorage.removeItem('refreshToken');
               localStorage.removeItem('token');
               localStorage.removeItem('currentUser');
-              this.notification.logoutMessageSucces(
-                "Account deleted!",
-                "Your account has been successfully deleted!"
-              );
+              this.notification.deletedAccountMessage();
             },
             error: (error) => {
               console.error("Account deletion failed:", error);

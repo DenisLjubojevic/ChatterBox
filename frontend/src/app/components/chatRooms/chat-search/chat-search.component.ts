@@ -47,11 +47,11 @@ export class ChatSearchComponent {
     const dialogRef = this.dialog.open(ConfirmDialogComponent , {
       width: "300px",
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to join this group?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.title.joinGroup',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
@@ -64,10 +64,10 @@ export class ChatSearchComponent {
           const successDialog = this.dialog.open(ConfirmDialogComponent, {
             width: "300px",
             data: {
-              title: 'Join chat',
-              message: data,
+              title: 'dialog.title.joinChat',
+              message: 'dialog.message.joinGroup',
               isConfirm: false,
-              okText: 'OK'
+              okText: 'dialog.button.ok'
             }
           })
 

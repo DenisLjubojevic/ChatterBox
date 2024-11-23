@@ -81,15 +81,12 @@ export class FriendListComponent implements OnInit{
   openChatWithFriend(friendUsername: string){
     if (this.currentUser){
       this.chatService.getClosedChatRoom(friendUsername).subscribe((chatRoom) => {
-          console.log('Chat room retrieved or created:', chatRoom);
 
           if (chatRoom == null){
             this.chatService.createClosedChatRoom(friendUsername).subscribe(data => {
-              console.log("created, redirect...")
               this.router.navigate(['/chat', data.id]);
             })
           }else{
-            console.log("redirect...")
             this.router.navigate(['/chat', chatRoom.id]);
           }
 
@@ -106,11 +103,11 @@ export class FriendListComponent implements OnInit{
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '300px',
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to remove him as your friend?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.message.removeFriend',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 

@@ -22,11 +22,11 @@ export class ChangePasswordDialogComponent {
       const dialogRef = this.dialog.open(ConfirmDialogComponent , {
         width: "300px",
         data: {
-          title: 'Are you sure?',
-          message: 'Do you really want to change your password?',
+          title: 'dialog.title.areYouSure',
+          message: 'dialog.message.changePassword',
           isConfirm: true,
-          confirmText: 'Yes',
-          cancelText: 'No'
+          confirmText: 'dialog.button.confirm',
+          cancelText: 'dialog.button.cancel'
         }
       })
 
@@ -39,10 +39,10 @@ export class ChangePasswordDialogComponent {
           const successDialog = this.dialog.open(ConfirmDialogComponent, {
             width: "300px",
             data: {
-              title: 'Password change',
-              message: 'You have successfully changed your password!',
+              title: 'dialog.title.passChanged',
+              message: 'dialog.message.passChanged',
               isConfirm: false,
-              okText: 'OK'
+              okText: 'dialog.button.ok'
             }
           })
 

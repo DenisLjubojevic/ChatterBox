@@ -17,7 +17,6 @@ export class ProfileDetailsComponent {
   previewImage: string | null = null;
 
   constructor(private userService: UserService) {
-    console.log("Getting user...");
     const username = localStorage.getItem('currentUser');
     if (username){
       this.userService.getUserByUsername(username).subscribe(data => {

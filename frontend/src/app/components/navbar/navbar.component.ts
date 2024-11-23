@@ -99,7 +99,7 @@ export class NavbarComponent implements OnInit{
     if (refreshToken){
       this.authService.logout(refreshToken).subscribe({
         next:() => {
-          this.notification.logoutMessageSucces("Logged out!", "Successfully logged out redirecting to login...")
+          this.notification.logoutMessageSucces();
         },
         error: (error) => {
           console.log(error);

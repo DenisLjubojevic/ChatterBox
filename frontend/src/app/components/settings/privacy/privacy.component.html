@@ -5,7 +5,7 @@
     <label>
       <input type="checkbox" [(ngModel)]="privacy.showOnlineStatus" />
       {{'privacySettings.onlineStatus' | translate}}
-      <span class="info-icon" title="Turning these off allows you to stay offline. Other people wouldn't be able to see if you are online.">
+      <span class="info-icon" title="{{'privacySettings.onlineStatusInfo' | translate}}">
         <i class="fa-solid fa-circle-info"></i>
       </span>
     </label>
@@ -14,7 +14,7 @@
     <label>
       <input type="checkbox" [(ngModel)]="privacy.profileVisibility" />
       {{'privacySettings.profileVisibility' | translate}}
-      <span class="info-icon" title="Turning these off allows you to stay hidden. Other people wouldn't be able to see your profile.">
+      <span class="info-icon" title="{{'privacySettings.profileVisibilityInfo' | translate}}">
         <i class="fa-solid fa-circle-info"></i>
       </span>
     </label>

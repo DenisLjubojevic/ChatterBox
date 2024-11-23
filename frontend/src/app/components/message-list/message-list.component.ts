@@ -12,6 +12,7 @@ import {Message} from "../../models/Message";
 import {formatDate} from "@angular/common";
 import {UserService} from "../../services/user.service";
 import {Users} from "../../models/Users";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-message-list',
@@ -24,7 +25,8 @@ export class MessageListComponent implements OnChanges, AfterViewChecked{
 
   private shouldAutoScroll: boolean = true;
   public currentUser: Users | null = null;
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private translate: TranslateService) {
     const currentUser: string | null = localStorage.getItem('currentUser');
     if (currentUser){
       this.userService.getUserByUsername(currentUser).subscribe(foundUser => {
@@ -70,13 +72,13 @@ export class MessageListComponent implements OnChanges, AfterViewChecked{
     const today = new Date();
 
     if (messageDate.toDateString() == today.toDateString()){
-      return 'Today';
+      return this.translate.instant('dialog.message.messageToday');
     }
 
     const yesterday = new Date(today);
     yesterday.setDate(today.getDate() - 1);
     if (messageDate.toDateString() === yesterday.toDateString()){
-      return 'Yesterday'
+      return this.translate.instant('dialog.message.messageYesterday');
     }
 
     return formatDate(messageDate, 'dd.MM.yyyy', 'en-US');

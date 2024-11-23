@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../services/auth/auth.service";
 import {Router} from "@angular/router";
 import {NotificationService} from "../../../services/auth/notification.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent {
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private router: Router,
-              private notification: NotificationService) {
+              private notification: NotificationService,
+              private translate: TranslateService) {
     this.loginForm = this.fb.group({
       username: ["", Validators.required],
       password: ["", Validators.required]
@@ -34,12 +36,12 @@ export class LoginComponent {
       this.loginForm.get('password')?.value
     ).subscribe({
       next: () => {
-        this.notification.authentificationMessageSucces("Logged in!", "Successfully logged in redirecting to main page...")
+        this.notification.authentificationMessageSucces();
       },
       error: (error) => {
         console.log('Login failed, ' ,error);
         this.router.navigate(['/login']);
-        this.loginError = 'Invalid email or password';
+        this.loginError = this.translate.instant('invalid.login');
       }
     });
   }

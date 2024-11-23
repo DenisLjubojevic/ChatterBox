@@ -111,7 +111,9 @@
   "privacySettings": {
     "title": "Postavke Privatnosti",
     "onlineStatus": "Prikaži online status",
-    "profileVisibility": "Vidljivost profila svima",
+    "onlineStatusInfo": "Isključivanje ovoga omogućuje da se ne vidi vaš online status. Drugi ljudi nebudu mogli vidjeti da li ste online.",
+    "profileVisibility": "Profil je vidljiv svima",
+    "profileVisibilityInfo": "Isključivanje ovoga omogućuje da ostanete skriveni. Drugi ljudi nebudu mogli vidjeti vaš profil.",
     "applyChanges": "Primijeni postavke privatnosti"
   },
   "themeSettings": {
@@ -131,24 +133,66 @@
     "title": {
       "areYouSure": "Jesi li siguran?",
       "themeChange": "Promjena teme",
-      "languageChange": "Language change",
-      "privacyChange": "Privacy settings change",
-      "saveAll": "Save all settings"
+      "languageChange": "Promjena jezika",
+      "privacyChange": "Promjena postavki privatnosti",
+      "saveAll": "Spremi sve postavke",
+      "allSaved": "Sve postavke su spremljene",
+      "passChanged": "Promijenjena lozinka",
+      "leftChat": "Napušteni razgovor",
+      "joinChat": "Pridruženi ste razgovoru",
+      "friendRequest": "Zahtjev za prijateljstvo",
+      "chatInvite": "Zahtjev za pristup razgovoru"
     },
     "message": {
       "updateTheme": "Da li stvarno želiš promijeniti temu?",
       "confirmTheme": "You have selected a new theme, to confirm it click on save all button!",
-      "updateLanguage": "Do you really want to change your language?",
-      "confirmLanguage": "You have selected a new language, to confirm it click on save all button!",
-      "updatePrivacy": "Do you really want to update your privacy settings?",
-      "confirmPrivacy": "You have updated your privacy settings, to confirm it click on save all button!",
-      "saveAll": "Do you want to save all your changes?",
-      "allSaved": "You have saved all of your settings!"
+      "updateLanguage": "Da li stvarno želiš promijeniti jezik?",
+      "confirmLanguage": "Odabrao si novi jezik, da bi potvrdio promjene moraš spremiti sve postavke!",
+      "updatePrivacy": "Da li stvarno želiš promijeniti postavke privatnosti?",
+      "confirmPrivacy": "Promijenio si svoje postavke privatnosti, da bi potvrdio promjene moraš spremiti sve postavke!",
+      "saveAll": "Da li želiš spremiti sve svoje postavke?",
+      "allSaved": "Spremio si sve svoje postavke!",
+      "changePassword": "Da li stvarno želiš promijeniti svoju lozinku?",
+      "passChanged": "Uspješno si promijenio svoju lozinku!",
+      "leaveGroup": "Da li stvarno želiš napustiti razgovor?",
+      "leftChat": "Napustili ste razgovor!",
+      "deleteChat": "Da li stvarno želiš obrisati grupu?",
+      "dateToday": "Danas u {{time}}",
+      "dateYesterday": "Jučer u {{time}}",
+      "usualDate": "{{date}} u {{time}}",
+      "joinGroup": "Da li se stvarno želiš pridružiti grupi?",
+      "joinChat": "Pridružili ste se novom razgovoru",
+      "messageToday": "Danas",
+      "messageYesterday": "Jučer",
+      "removeFriend": "Da li ga stvarno želite maknuti za prijatelja?",
+      "friendRequestAccept": "Prihvatili ste zahtjev za prijateljstvo!",
+      "friendRequestReject": "Odbili ste zahtjev za prijateljstvo!",
+      "chatInviteAccept": "Prihvatili ste zahtjev za pristup razgovoru!",
+      "chatInviteReject": "Odbili ste zahtjev za pristup razgovoru!",
+      "chatInvite": "Da li stvarno želite pozvati prijatelja u razgovor?",
+      "chatInviteSucces": "Poslali ste zahtjev za pristup razgovoru!",
+      "friendInvite": "Da li stvarno želite dodati novog prijatelja?",
+      "friendInviteSuccess": "Poslali ste zahtjev za prijateljstvo",
+      "deleteAccount": "Da li stvarno želite obrisati svoj račun?"
     },
     "button": {
       "confirm": "Da",
       "cancel": "Ne",
       "ok": "OK"
     }
+  },
+  "notifications": {
+    "loginSuccessTitle": "Prijava!",
+    "loginSuccessMessage": "Uspješna prijava, preusmjeravanje na glavnu stranicu...",
+    "signupSuccessTitle": "Napravljen račun!",
+    "signupSuccessMessage": "Uspješno napravljen račun, preusmjeravanje na prijavu...",
+    "logoutSuccessTitle": "Odjava!",
+    "logoutSuccessMessage": "Upravo ste se odjavili, preusmjeravanje na prijavu...",
+    "deleteAccSuccessTitle": "Obrisan račun!",
+    "deleteAccSuccessMessage": "Vaš račun je uspješno obrisan!"
+  },
+  "invalid": {
+    "login": "Neispravno korisničko ime ili lozinka",
+    "singUp": "Molimo unesite sve podatke!"
   }
 }

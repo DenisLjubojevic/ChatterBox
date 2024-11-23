@@ -4,6 +4,7 @@ import {AuthService} from "../../../services/auth/auth.service";
 import {Router} from "@angular/router";
 import {NotificationService} from "../../../services/auth/notification.service";
 import {Users} from "../../../models/Users";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-sign-up',
@@ -17,7 +18,8 @@ export class SignUpComponent {
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private notification: NotificationService,
-              private router: Router){
+              private router: Router,
+              private translate: TranslateService){
     var friends: Users[]  = [];
 
     this.signupForm = this.fb.group({
@@ -36,14 +38,12 @@ export class SignUpComponent {
   signUp(){
     this.signupError = '';
     if (this.signupForm.invalid){
-      this.signupError = 'Please enter all the informations!';
+      this.signupError = this.translate.instant('invalid.signUp');
       return;
     }
 
     this.authService.signup(this.signupForm.value).subscribe((res) => {
-      this.notification.singInMessageSucces(
-        "Account created!",
-        "Successfully created account, redirecting to login...")
+      this.notification.singInMessageSucces();
     })
   }
 

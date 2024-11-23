@@ -13,6 +13,7 @@ import {MessagesService} from "../../../services/messages.service";
 import {ModelRequest} from "../../../models/ModelRequest";
 import {Subject, takeUntil} from "rxjs";
 import {UserSettings} from "../../../models/UserSettings";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-chat-room-list',
@@ -42,7 +43,8 @@ export class ChatRoomListComponent implements OnInit, OnDestroy{
               private dialog: MatDialog,
               private route: ActivatedRoute,
               private webSocketService: WebSocketService,
-              private router: Router
+              private router: Router,
+              private translate: TranslateService
   ) {
 
   }
@@ -179,14 +181,16 @@ export class ChatRoomListComponent implements OnInit, OnDestroy{
 
     const formatTime = (date: Date) => `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
     if (timestamp.toDateString() === now.toDateString()){
-      return `Today at ${formatTime(timestamp)}`;
+      return this.translate.instant('dialog.message.dateToday', { time: formatTime(timestamp) });
     }
 
     if (timestamp.toDateString() === yesterday.toDateString()) {
-      return `Yesterday at ${formatTime(timestamp)}`;
+      return this.translate.instant('dialog.message.dateYesterday', { time: formatTime(timestamp) });
     }
 
-    return `${String(timestamp.getDate()).padStart(2, '0')}.${String(timestamp.getMonth() + 1).padStart(2, '0')}.${timestamp.getFullYear()} in ${formatTime(timestamp)}`;
+    return this.translate.instant('dialog.message.usualDate',
+      { date: String(timestamp.getDate()).padStart(2, '0') + '.' + String(timestamp.getMonth() + 1).padStart(2, '0') + '.' + String(timestamp.getFullYear()),
+        time: formatTime(timestamp) });
   }
 
   showChatDetails(room: any, event: Event){
@@ -206,7 +210,6 @@ export class ChatRoomListComponent implements OnInit, OnDestroy{
   }
 
   selectRoom(room: ChatRoom) {
-    console.log("CHANGING ROOM...");
     const chatRoomId = room.id;
     localStorage.setItem('currentChat', chatRoomId.toString());
 

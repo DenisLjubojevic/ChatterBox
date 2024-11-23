@@ -90,7 +90,6 @@ export class FriendSearchComponent {
             chatRoom.members.some(member => member.id === user.id)
           )
 
-          console.log("member - " + isAlreadyMember);
           this.isFound = !isSelfOnly && !isAlreadyMember;
         })
       }else{
@@ -111,11 +110,11 @@ export class FriendSearchComponent {
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent , {
       width: "300px",
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to invite friend to chat?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.message.chatInvite',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
@@ -128,10 +127,10 @@ export class FriendSearchComponent {
           const successDialog = this.confirmDialog.open(ConfirmDialogComponent, {
             width: "300px",
             data: {
-              title: 'Chat invite',
-              message: data,
+              title: 'dialog.title.chatInvite',
+              message: 'dialog.message.chatInviteSucces',
               isConfirm: false,
-              okText: 'OK'
+              okText: 'dialog.button.ok'
             }
           })
 
@@ -149,11 +148,11 @@ export class FriendSearchComponent {
     const dialogRef = this.confirmDialog.open(ConfirmDialogComponent , {
       width: "300px",
       data: {
-        title: 'Are you sure?',
-        message: 'Do you really want to add new friend?',
+        title: 'dialog.title.areYouSure',
+        message: 'dialog.message.friendInvite',
         isConfirm: true,
-        confirmText: 'Yes',
-        cancelText: 'No'
+        confirmText: 'dialog.button.confirm',
+        cancelText: 'dialog.button.cancel'
       }
     })
 
@@ -166,8 +165,8 @@ export class FriendSearchComponent {
           const successDialog = this.confirmDialog.open(ConfirmDialogComponent, {
             width: "300px",
             data: {
-              title: 'Friend request',
-              message: data,
+              title: 'dialog.title.friendRequest',
+              message: 'dialog.message.friendInviteSuccess',
               isConfirm: false,
               okText: 'OK'
             }
