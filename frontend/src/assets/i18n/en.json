@@ -107,6 +107,8 @@
     "title": "Languages",
     "engButton": "English",
     "croButton": "Croatian",
+    "espButton": "Spanish",
+    "fraButton": "France",
     "applyButton": "Apply"
   },
   "privacySettings": {
@@ -121,8 +123,10 @@
     "title": "Change theme",
     "greenLabel": "Green",
     "brownLabel": "Brown",
+    "purpleLabel": "Purple",
     "bluePinkLabel": "Blue/Pink",
     "blackYellowLabel": "Black/Yellow",
+    "redWhiteLabel": "Red/White",
     "applyButton": "Apply"
   },
   "settings": {

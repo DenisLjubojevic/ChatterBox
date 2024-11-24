@@ -1,0 +1,205 @@
+{
+  "loginScreen":{
+    "login": "Acceso",
+    "username": "Usuariosername: ",
+    "password": "Contraseña: ",
+    "loginButton": "Acceso",
+    "signUpButton": "Inscribirse"
+  },
+  "signUpScreen": {
+    "signUp": "Inscribirse",
+    "username": "Usuariosername: ",
+    "password": "Contraseña: ",
+    "email": "Correo electrónico: ",
+    "displayedName": "Nombre mostrado: ",
+    "signUpButton": "Inscribirse",
+    "backButton": "Atrás"
+  },
+  "changePassDialog": {
+    "title": "Cambiar la contraseña",
+    "newPassword": "Nueva Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "submitButton": "Entregar",
+    "cancelButton": "Cancelar"
+  },
+  "addChatRoom": {
+    "title": "Crear nuevo grupo de chat",
+    "name": "Nombre: ",
+    "nameError": "El nombre es obligatorio y debe tener menos de 20 caracteres.",
+    "description": "Descripción: ",
+    "descriptionError": "La descripción es obligatoria y no puede exceder los 255 caracteres.",
+    "type": "Tipo: ",
+    "addPicture": "Agregar imagen: ",
+    "createButton": "Crear grupo de chat",
+    "cancelButton": "Cancelar"
+  },
+  "chatDetails": {
+    "namePlaceholder": "Nombre",
+    "descPlaceholder": "Descripción",
+    "public": "Pública",
+    "private": "Privada",
+    "editButton": "Editar conversación",
+    "saveButton": "Guardar cambios",
+    "cancelButton": "Cancelar",
+    "inviteFriends": "Invitar a amigas",
+    "leaveButton": "Salir del chat",
+    "deleteButton": "Eliminar chat"
+  },
+  "chatRoomList": {
+    "joinNewGroup": "Únete a un nuevo grupo",
+    "type": "Tipo: ",
+    "description": "Descripción: ",
+    "createdBy": "Creado por: ",
+    "members": "Miembros: ",
+    "detailsButton": "Detalles",
+    "closeButton": "Cerca"
+  },
+  "chatSearch": {
+    "searchPlaceholder": "Buscar grupos públicos...",
+    "createButton": "Crear nuevo chat",
+    "closeButton": "Cerca"
+  },
+  "messageInput": {
+    "inputPlaceholder": "Escribe tu mensaje...",
+    "sendButton": "Enviar"
+  },
+  "navBar": {
+    "profile": "Perfil",
+    "chat": "Charlar",
+    "settings": "Ajustes",
+    "logout": "Cerrar sesión"
+  },
+  "friendList": {
+    "title": "Amigos:",
+    "noFriendMessage": "No tienes amigas, agrega a alguien para hacerte compañía!",
+    "addFriendsButton": "Agregar amigos"
+  },
+  "friendRequests": {
+    "title": "Solicitudes de amistad",
+    "noRequestMessage": "No tienes solicitudes de amigas!",
+    "accept": "Aceptar",
+    "reject": "Rechazar",
+    "chatInvTitle": "Invitaciones de chat",
+    "noChatReqMessage": "No tienes solicitudes de amigos!",
+    "chatReqMessage": " te envié una invitación de chat para chatear: "
+  },
+  "friendSearch": {
+    "inputPlaceholder": "Buscar amigos...",
+    "cantFindMessage": "No se pudo encontrar ningún usuario con ese nombre!",
+    "closeButton": "Cerca"
+  },
+  "profileDetails": {
+    "namePlaceholder": "Su nombre",
+    "displayedNamePlaceholder": "Nombre mostrado",
+    "email": "Correo electrónico: ",
+    "emailPlaceholder": "Correo electrónico",
+    "editButton": "Editar perfil",
+    "saveButton": "Guardar cambios",
+    "cancelButton": "Cancelar",
+    "closeButton": "Cerca"
+  },
+  "accountSettings": {
+    "title": "Configuraciones de la cuenta",
+    "changePassButton": "Cambiar la contraseña",
+    "deleteAccButton": "Eliminar cuenta"
+  },
+  "languageScreen": {
+    "title": "Idiomas",
+    "engButton": "Inglés",
+    "croButton": "Croata",
+    "espButton": "Española",
+    "fraButton": "Francia",
+    "applyButton": "Aplicar"
+  },
+  "privacySettings": {
+    "title": "Configuración de privacidad",
+    "onlineStatus": "Mostrar estado en línea",
+    "onlineStatusInfo": "Desactivarlos le permite permanecer desconectado. Otras personas no podrán ver si estás en línea.",
+      "profileVisibility": "Perfil visible para todas",
+    "profileVisibilityInfo": "Desactivarlos le permite permanecer oculto. Otras personas no podrían ver tu perfil.",
+    "applyChanges": "Aplicar cambios de privacidad"
+  },
+  "themeSettings": {
+    "title": "Cambiar tema",
+    "greenLabel": "Verde",
+    "brownLabel": "Marrón",
+    "purpleLabel": "Púrpura",
+    "bluePinkLabel": "Azul/Rosa",
+    "blackYellowLabel": "Negro/Amarillo",
+    "redWhiteLabel": "Roja / blanca",
+    "applyButton": "Aplicar"
+  },
+  "settings": {
+    "title": "Configuración de usuario",
+    "loadingSettings": "Cargando configuración...",
+    "saveButton": "Guardar todos los cambios"
+  },
+  "dialog": {
+    "title": {
+      "areYouSure": "Estas segura?",
+      "themeChange": "Cambio de tema",
+      "languageChange": "Cambio de idioma",
+      "privacyChange": "Cambio de configuración de privacidad",
+      "saveAll": "Guardar todas las configuraciones",
+      "allSaved": "Todas las configuraciones guardadas",
+      "passChanged": "Contraseña cambiada",
+      "leftChat": "Chat izquierdo",
+      "joinChat": "Unirse al chat",
+      "friendRequest": "Solicitud de amistad",
+      "chatInvite": "Invitación de chat",
+      "notVisible": "Perfil privado"
+    },
+    "message": {
+      "updateTheme": "Realmente quieres actualizar tu tema?",
+      "confirmTheme": "Ha seleccionado un nuevo tema, para confirmarlo haga clic en el botón Guardar todo!",
+      "updateLanguage": "Realmente quieres cambiar tu idioma?",
+      "confirmLanguage": "Ha seleccionado un nuevo idioma, para confirmarlo haga clic en el botón Guardar todo!",
+      "updatePrivacy": "Realmente deseas actualizar tu configuración de privacidad?",
+      "confirmPrivacy": "Ha actualizado su configuración de privacidad. Para confirmarlo, haga clic en el botón Guardar todo!",
+      "saveAll": "Quieres guardar todos tus cambios?",
+      "allSaved": "Has guardado todas tus configuraciones!",
+      "changePassword": "Realmente quieres cambiar tu contraseña?",
+      "passChanged": "Has cambiado exitosamente tu contraseña!",
+      "leaveGroup": "De verdad quieres dejar este grupo?",
+      "leftChat": "Has abandonado el chat!",
+      "deleteChat": "Realmente quieres eliminar este grupo?",
+      "dateToday": "Hoy en {{time}}",
+      "dateYesterday": "Ayer en {{time}}",
+      "usualDate": "En {{date}} en {{time}}",
+      "joinGroup": "De verdad quieres unirte a este grupo?",
+      "joinChat": "Te has unido a un nuevo chat",
+      "messageToday": "Hoy",
+      "messageYesterday": "Ayer",
+      "removeFriend": "De verdad quieres eliminarlo como tu amigo?",
+      "friendRequestAccept": "Aceptaste solicitud de amistad!",
+      "friendRequestReject": "Rechazaste la solicitud de amistad!",
+      "chatInviteAccept": "Aceptaste la invitación al chat!",
+      "chatInviteReject": "Rechazaste la invitación al chat!",
+      "chatInvite": "De verdad quieres invitar a una amiga a chatear?",
+      "chatInviteSucces": "Has enviado una invitación de chat",
+      "friendInvite": "Realmente quieres agregar un nuevo amigo?",
+      "friendInviteSuccess": "Has enviado solicitud de amistad",
+      "deleteAccount": "Realmente quieres eliminar tu cuenta?",
+      "notVisible": "El perfil de usuario está configurado como privado"
+    },
+    "button": {
+      "confirm": "Sí",
+      "cancel": "No",
+      "ok": "OK"
+    }
+  },
+  "notifications": {
+    "loginSuccessTitle": "Iniciado sesión!",
+    "loginSuccessMessage": "Inicie sesión exitosamente. Redirigiendo a la página principal...",
+    "signupSuccessTitle": "Cuenta creada!",
+    "signupSuccessMessage": "Cuenta creada con éxito, redirigiendo para iniciar sesión...",
+    "logoutSuccessTitle": "Cerrado sesión!",
+    "logoutSuccessMessage": "Se te ha cerrado la sesión. Redirigir a la página de inicio de sesión...",
+    "deleteAccSuccessTitle": "Cuenta eliminada!",
+    "deleteAccSuccessMessage": "Su cuenta ha sido eliminada exitosamente!"
+  },
+  "invalid": {
+    "login": "Nombre de usuario o contraseña no válidos",
+    "singUp": "Por favor ingresa toda la información!"
+  }
+}

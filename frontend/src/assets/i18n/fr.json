@@ -1,0 +1,205 @@
+{
+  "loginScreen":{
+    "login": "Se connecter",
+    "username": "Nom d'utilisateur: ",
+    "password": "Mot de passe: ",
+    "loginButton": "Se connecter",
+    "signUpButton": "S'inscrire"
+  },
+  "signUpScreen": {
+    "signUp": "S'inscrire",
+    "username": "Nom d'utilisateur: ",
+    "password": "Mot de passe: ",
+    "email": "E-mail: ",
+    "displayedName": "Nom affiché: ",
+    "signUpButton": "S'inscrire",
+    "backButton": "Dos"
+  },
+  "changePassDialog": {
+    "title": "Changer le mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmez le mot de passe",
+    "submitButton": "Soumettre",
+    "cancelButton": "Annuler"
+  },
+  "addChatRoom": {
+    "title": "Créer un nouveau groupe de discussion",
+    "name": "Nom: ",
+    "nameError": "Le nom est obligatoire et doit comporter moins de 20 caractères.",
+    "description": "Description: ",
+    "descriptionError": "La description est obligatoire et ne peut pas dépasser 255 caractères.",
+    "type": "Taper: ",
+    "addPicture": "Ajouter une photo: ",
+    "createButton": "Créer un groupe de discussion",
+    "cancelButton": "Annuler"
+  },
+  "chatDetails": {
+    "namePlaceholder": "Nom",
+    "descPlaceholder": "Description",
+    "public": "Publique",
+    "private": "Privée",
+    "editButton": "Modifier le chat",
+    "saveButton": "Enregistrer les modifications",
+    "cancelButton": "Annuler",
+    "inviteFriends": "Inviter des amis",
+    "leaveButton": "Quitter le chat",
+    "deleteButton": "Supprimer le chat"
+  },
+  "chatRoomList": {
+    "joinNewGroup": "Rejoindre un nouveau groupe",
+    "type": "Taper: ",
+    "description": "Description: ",
+    "createdBy": "Créé par: ",
+    "members": "Membres: ",
+    "detailsButton": "Détails",
+    "closeButton": "Fermer"
+  },
+  "chatSearch": {
+    "searchPlaceholder": "Rechercher des groupes publics...",
+    "createButton": "Créer une nouvelle discussion",
+    "closeButton": "Fermer"
+  },
+  "messageInput": {
+    "inputPlaceholder": "Tapez votre message...",
+    "sendButton": "Envoyer"
+  },
+  "navBar": {
+    "profile": "Profil",
+    "chat": "Chatte",
+    "settings": "Paramètres",
+    "logout": "Déconnexion"
+  },
+  "friendList": {
+    "title": "Amies:",
+    "noFriendMessage": "Vous n'avez pas d'amis, ajoutez quelqu'un pour vous tenir compagnie!",
+    "addFriendsButton": "Ajouter des amis"
+  },
+  "friendRequests": {
+    "title": "Demandes d'amis",
+    "noRequestMessage": "Vous n'avez aucune demande d'amis!",
+    "accept": "Accepter",
+    "reject": "Rejeter",
+    "chatInvTitle": "Invitations à discuter",
+    "noChatReqMessage": "Vous n'avez aucune demande d'amis!",
+    "chatReqMessage": " vous a envoyé une invitation à discuter: "
+  },
+  "friendSearch": {
+    "inputPlaceholder": "Rechercher des amis...",
+    "cantFindMessage": "Impossible de trouver un utilisateur sous ce nom!",
+    "closeButton": "Fermer"
+  },
+  "profileDetails": {
+    "namePlaceholder": "Votre nom",
+    "displayedNamePlaceholder": "Nom affiché",
+    "email": "E-mail: ",
+    "emailPlaceholder": "E-mail",
+    "editButton": "Modifier le profil",
+    "saveButton": "Enregistrer les modifications",
+    "cancelButton": "Annuler",
+    "closeButton": "Fermer"
+  },
+  "accountSettings": {
+    "title": "Paramètres du compte",
+    "changePassButton": "Changer le mot de passe",
+    "deleteAccButton": "Supprimer le compte"
+  },
+  "languageScreen": {
+    "title": "Langues",
+    "engButton": "Anglaise",
+    "croButton": "Croate",
+    "espButton": "Espagnole",
+    "fraButton": "France",
+    "applyButton": "Appliquer"
+  },
+  "privacySettings": {
+    "title": "Paramètres de confidentialité",
+    "onlineStatus": "Afficher le statut en ligne",
+    "onlineStatusInfo": "Les désactiver vous permet de rester hors ligne. Les autres personnes ne pourront pas voir si vous êtes en ligne.",
+    "profileVisibility": "Profil visible par tous",
+    "profileVisibilityInfo": "Les désactiver vous permet de rester caché. D'autres personnes ne pourraient pas voir votre profil.",
+    "applyChanges": "Appliquer les modifications de confidentialité"
+  },
+  "themeSettings": {
+    "title": "Changer de thème",
+    "greenLabel": "Verte",
+    "brownLabel": "Brun",
+    "purpleLabel": "Violette",
+    "bluePinkLabel": "Bleu/Rose",
+    "blackYellowLabel": "Noir/Jaune",
+    "redWhiteLabel": "Rouge/Blanc",
+    "applyButton": "Appliquer"
+  },
+  "settings": {
+    "title": "Paramètres utilisateur",
+    "loadingSettings": "Chargement des paramètres...",
+    "saveButton": "Enregistrer toutes les modifications"
+  },
+  "dialog": {
+    "title": {
+      "areYouSure": "Es-tu sûr?",
+      "themeChange": "Changement de thème",
+      "languageChange": "Changement de langue",
+      "privacyChange": "Modification des paramètres de confidentialité",
+      "saveAll": "Enregistrez tous les paramètres",
+      "allSaved": "Tous les paramètres enregistrés",
+      "passChanged": "Mot de passe modifié",
+      "leftChat": "Discussion quittée",
+      "joinChat": "Rejoindre le chat",
+      "friendRequest": "Demande d'ami",
+      "chatInvite": "Invitation à discuter",
+      "notVisible": "Profil privé"
+    },
+    "message": {
+      "updateTheme": "Voulez-vous vraiment mettre à jour votre thème?",
+      "confirmTheme": "Vous avez sélectionné un nouveau thème, pour le confirmer cliquez sur le bouton tout enregistrer!",
+      "updateLanguage": "Voulez-vous vraiment changer de langue?",
+      "confirmLanguage": "Vous avez sélectionné une nouvelle langue, pour la confirmer cliquez sur le bouton tout enregistrer!",
+      "updatePrivacy": "Voulez-vous vraiment mettre à jour vos paramètres de confidentialité?",
+      "confirmPrivacy": "Vous avez mis à jour vos paramètres de confidentialité, pour le confirmer cliquez sur le bouton Enregistrer tout!",
+      "saveAll": "Voulez-vous enregistrer toutes vos modifications?",
+      "allSaved": "Vous avez enregistré tous vos paramètres!",
+      "changePassword": "Voulez-vous vraiment changer votre mot de passe?",
+      "passChanged": "Vous avez changé votre mot de passe avec succès!",
+      "leaveGroup": "Voulez-vous vraiment quitter ce groupe?",
+      "leftChat": "Vous avez quitté le chat!",
+      "deleteChat": "Voulez-vous vraiment supprimer ce groupe?",
+      "dateToday": "Aujourd'hui à {{time}}",
+      "dateYesterday": "Hier à {{time}}",
+      "usualDate": "Sur {{date}} à {{time}}",
+      "joinGroup": "Voulez-vous vraiment rejoindre ce groupe?",
+      "joinChat": "Vous avez rejoint un nouveau chat",
+      "messageToday": "Aujourd'hui",
+      "messageYesterday": "Hier",
+      "removeFriend": "Voulez-vous vraiment le retirer de votre statut d'ami?",
+      "friendRequestAccept": "Vous avez accepté la demande d'ami!",
+      "friendRequestReject": "Vous avez rejeté la demande d'ami!",
+      "chatInviteAccept": "Vous avez accepté l'invitation à discuter!",
+      "chatInviteReject": "Vous avez rejeté l'invitation à discuter!",
+      "chatInvite": "Voulez-vous vraiment inviter un ami à discuter?",
+      "chatInviteSucces": "Vous avez envoyé une invitation à discuter",
+      "friendInvite": "Voulez-vous vraiment ajouter un nouvel ami?",
+      "friendInviteSuccess": "Vous avez envoyé une demande d'ami",
+      "deleteAccount": "Voulez-vous vraiment supprimer votre compte?",
+      "notVisible": "Le profil utilisateur est défini sur privé"
+    },
+    "button": {
+      "confirm": "Oui",
+      "cancel": "Non",
+      "ok": "D'ACCORD"
+    }
+  },
+  "notifications": {
+    "loginSuccessTitle": "Connecté!",
+    "loginSuccessMessage": "Connecté avec succès. Redirection vers la page principale...",
+    "signupSuccessTitle": "Compte créé!",
+    "signupSuccessMessage": "Compte créé avec succès, redirigé vers la connexion...",
+    "logoutSuccessTitle": "Déconnecté!",
+    "logoutSuccessMessage": "Vous avez été déconnecté. Redirection vers la page de connexion...",
+    "deleteAccSuccessTitle": "Compte supprimé!",
+    "deleteAccSuccessMessage": "Votre compte a été supprimé avec succès!"
+  },
+  "invalid": {
+    "login": "Nom d'utilisateur ou mot de passe invalide",
+    "singUp": "Veuillez entrer toutes les informations!"
+  }
+}

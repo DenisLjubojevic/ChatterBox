@@ -43,6 +43,11 @@
                 "inject": false
               },
               {
+                "input": "src/assets/themes/purple.css",
+                "bundleName": "purple",
+                "inject": false
+              },
+              {
                 "input": "src/assets/themes/blue-pink.css",
                 "bundleName": "bluePink",
                 "inject": false
@@ -50,6 +55,11 @@
               {
                 "input": "src/assets/themes/black-yellow.css",
                 "bundleName": "blackYellow",
+                "inject": false
+              },
+              {
+                "input": "src/assets/themes/red-white.css",
+                "bundleName": "redWhite",
                 "inject": false
               }
             ],

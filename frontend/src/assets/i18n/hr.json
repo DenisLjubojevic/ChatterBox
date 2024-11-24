@@ -107,6 +107,8 @@
     "title": "Jezici",
     "engButton": "Engleski",
     "croButton": "Hrvatski",
+    "espButton": "Španjolski",
+    "fraButton": "Francuski",
     "applyButton": "Primijeni"
   },
   "privacySettings": {
@@ -121,8 +123,10 @@
     "title": "Promjeni Temu",
     "greenLabel": "Zelena",
     "brownLabel": "Smeđa",
+    "purpleLabel": "Ljubičasta",
     "bluePinkLabel": "Plavo/Roza",
     "blackYellowLabel": "Crno/Žuta",
+    "redWhiteLabel": "Crveno/Bijela",
     "applyButton": "Primijeni"
   },
   "settings": {

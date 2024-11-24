@@ -11,5 +11,15 @@
     {{'languageScreen.croButton' | translate}}
   </label>
   <br>
+  <label>
+    <input type="radio" name="language" value="es" [checked]="language === 'es'" (change)="changeLanguage('es')" />
+    {{'languageScreen.espButton' | translate}}
+  </label>
+  <br>
+  <label>
+    <input type="radio" name="language" value="fr" [checked]="language === 'fr'" (change)="changeLanguage('fr')" />
+    {{'languageScreen.fraButton' | translate}}
+  </label>
+  <br>
   <button type="button" (click)="applyLanguage()">{{'languageScreen.applyButton' | translate}}</button>
 </div>

@@ -13,6 +13,11 @@
     <label>{{'themeSettings.brownLabel' | translate}}</label>
   </div>
 
+  <div class="theme-item" [ngClass]="{'selected': themeColor === 'purple'}" (click)="previewTheme('purple')">
+    <div class="indicator-purple"></div>
+    <label>{{'themeSettings.purpleLabel' | translate}}</label>
+  </div>
+
   <div class="theme-item" [ngClass]="{'selected': themeColor === 'bluePink'}" (click)="previewTheme('bluePink')">
     <div class="indicator-blue-pink"></div>
     <label>{{'themeSettings.bluePinkLabel' | translate}}</label>
@@ -21,6 +26,11 @@
   <div class="theme-item" [ngClass]="{'selected': themeColor === 'blackYellow'}" (click)="previewTheme('blackYellow')">
     <div class="indicator-black-yellow"></div>
     <label>{{'themeSettings.blackYellowLabel' | translate}}</label>
+  </div>
+
+  <div class="theme-item" [ngClass]="{'selected': themeColor === 'redWhite'}" (click)="previewTheme('redWhite')">
+    <div class="indicator-red-white"></div>
+    <label>{{'themeSettings.redWhiteLabel' | translate}}</label>
   </div>
 </div>
 

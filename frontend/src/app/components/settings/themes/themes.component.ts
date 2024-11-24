@@ -12,6 +12,7 @@ export class ThemesComponent {
   constructor(private theme: ThemesService) { }
 
   previewTheme(newTheme: string){
+    console.log(newTheme);
     this.themeColor = newTheme;
     this.theme.loadTheme(newTheme);
   }
