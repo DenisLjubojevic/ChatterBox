@@ -18,10 +18,18 @@ export class MessagesService {
     })
   };
 
-  getMessagesByChatName(chatName: any): Observable<any>{
+  getMessagesByChatName(chatName: any): Observable<Message[]>{
     return this.http
       .get<Message[]>(
         this.baseUrl + '/message/chat/' + chatName
+      )
+      .pipe(retry(1), catchError(this.errorHandl));
+  }
+
+  getPaginatedMessages(chatName: string, offset: number, limit: number): Observable<Message[]>{
+    return this.http
+      .get<Message[]>(
+        `${this.baseUrl}/message/chat/${chatName}/paginated?offset=${offset}&limit=${limit}`
       )
       .pipe(retry(1), catchError(this.errorHandl));
   }

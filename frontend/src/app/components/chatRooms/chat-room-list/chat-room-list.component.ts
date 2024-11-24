@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {ChatRoomsServiceService} from "../../../services/chat-rooms-service.service";
 import {ChatRoom} from "../../../models/ChatRoom";
@@ -30,7 +30,14 @@ export class ChatRoomListComponent implements OnInit, OnDestroy{
 
   chatMembers: Users[] = [];
 
-  messages: Message[] = []
+  messages: Message[] = [];
+  private offset = 0;
+  private limit = 20;
+  allMessagesLoaded = false;
+  private loading = false;
+
+  @ViewChild('messageListContainer') private messageListContainer!: ElementRef;
+
   unreadCounts: { [key: number]: number } = {};
 
   private unsubscribe$ = new Subject<void>();
@@ -51,12 +58,34 @@ export class ChatRoomListComponent implements OnInit, OnDestroy{
   }
 
   getChatMessages(chatRoomId: number){
+
     this.chatRoomService.getChatRoomById(chatRoomId).subscribe(chatRoom => {
-      this.messageService.getMessagesByChatName(chatRoom.name).subscribe(messages => {
-        this.messages = messages;
+
+      this.messageService.getPaginatedMessages(chatRoom.name, 0, this.limit).subscribe(messages => {
+        this.messages = [...messages.reverse(), ...this.messages];
+        this.offset += this.limit;
+        this.loading = false;
       })
+
       this.selectRoom(chatRoom);
     })
+  }
+
+  loadMessages() {
+    if (this.allMessagesLoaded || this.loading) return;
+
+    this.loading = true;
+    if (this.selectedChatRoom){
+      this.messageService.getPaginatedMessages(this.selectedChatRoom.name, this.offset, this.limit).subscribe((messages) => {
+        if (messages.length < this.limit) {
+          this.allMessagesLoaded = true;
+        }
+        this.messages = [...messages.reverse(), ...this.messages];
+        this.offset += this.limit;
+        this.loading = false;
+      });
+    }
+
   }
 
   pushModelRequestToMessages(messageModel: ModelRequest){
@@ -257,6 +286,9 @@ export class ChatRoomListComponent implements OnInit, OnDestroy{
       });
 
     this.webSocketService.clearUnreadCount(room.id);
+    this.messages = [];
+    this.offset = 0;
+    this.allMessagesLoaded = false;
     this.getChatMessages(room.id);
   }
 

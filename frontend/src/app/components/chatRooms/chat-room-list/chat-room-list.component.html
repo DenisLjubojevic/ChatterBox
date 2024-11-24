@@ -54,7 +54,11 @@
   </div>
 
   <div class="chat-main">
-    <app-chat-room *ngIf="selectedChatRoom" [chatRoom]="selectedChatRoom" [messages]="messages">
+    <app-chat-room *ngIf="selectedChatRoom"
+                   [chatRoom]="selectedChatRoom"
+                   [messages]="messages"
+                   [allMessagesLoaded] = "allMessagesLoaded"
+                   (loadOlderMessages)="loadMessages()">
     </app-chat-room>
   </div>
 

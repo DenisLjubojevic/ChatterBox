@@ -13,6 +13,8 @@ public interface MessageService {
 
     List<MessageDTO> findByChatRoom(ChatRoom chatRoom);
 
+    List<MessageDTO> findMessageByChatRoomPaginated(ChatRoom chatRoom, int offset, int limit);
+
     void deleteById(Long id);
 
     MessageRequestDTO sendMessage(Long chatRoomId, Long userId, String content);

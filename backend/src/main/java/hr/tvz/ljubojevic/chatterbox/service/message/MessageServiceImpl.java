@@ -9,6 +9,8 @@ import hr.tvz.ljubojevic.chatterbox.repository.ChatRoomRepository;
 import hr.tvz.ljubojevic.chatterbox.repository.MessageRepository;
 import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -85,6 +87,14 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public List<MessageDTO> findByChatRoom(ChatRoom chatRoom) {
         return messageRepository.findByChatRoom(chatRoom).stream()
+                .map(this::convertMessageToMessageDTO)
+                .toList();
+    }
+
+    @Override
+    public List<MessageDTO> findMessageByChatRoomPaginated(ChatRoom chatRoom, int offset, int limit) {
+        Pageable pageable = PageRequest.of(offset / limit, limit);
+        return messageRepository.findByChatRoomOrderByTimestampDesc(chatRoom, pageable).stream()
                 .map(this::convertMessageToMessageDTO)
                 .toList();
     }

@@ -29,6 +29,20 @@ public class MessageController {
         return messageService.findByChatRoom(chatRoomService.convertChatRoomDTOToChatRoom(chatRoom.get()));
     }
 
+    @GetMapping("/chat/{chatName}/paginated")
+    public List<MessageDTO> findByChatNamePaginated(
+            @PathVariable String chatName,
+            @RequestParam int offset,
+            @RequestParam int limit
+    ) {
+        Optional<ChatRoomDTO> chatRoom = chatRoomService.findChatRoomByName(chatName);
+        return messageService.findMessageByChatRoomPaginated(
+                chatRoomService.convertChatRoomDTOToChatRoom(chatRoom.get()),
+                offset,
+                limit
+        );
+    }
+
     @PostMapping("/sendFriend/{friendUsername}")
     public MessageDTO sendFriendMessage(@RequestBody MessageDTO message,
                                         @PathVariable String friendUsername,

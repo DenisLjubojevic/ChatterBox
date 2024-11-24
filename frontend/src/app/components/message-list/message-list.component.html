@@ -1,4 +1,9 @@
 <div #messageListContainer class="message-list-container">
+  <div class="load-more-button-container">
+    <button *ngIf="!allMessagesLoaded" (click)="loadMore()" class="load-more-button">
+      <i class="fa-solid fa-spinner"></i>
+    </button>
+  </div>
   <div *ngFor="let message of messageList; let i = index">
     <div *ngIf="i === 0 || getFormattedDate(message.timestamp) !== getFormattedDate(messageList[i - 1].timestamp)" class="date-header">
       <div class="line"></div>

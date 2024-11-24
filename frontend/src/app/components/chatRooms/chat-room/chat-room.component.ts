@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Message} from "../../../models/Message";
 import {ChatRoom} from "../../../models/ChatRoom";
 import {WebSocketService} from "../../../services/web-socket.service";
@@ -17,8 +17,16 @@ export class ChatRoomComponent{
   @Input() messages: Message[] = [];
   @Input() chatRoom!: ChatRoom;
 
+  @Input() allMessagesLoaded: boolean = false;
+
+  @Output() loadOlderMessages = new EventEmitter<void>();
+
   constructor(private webSocketService: WebSocketService,
               private userSrevice: UserService) {
+  }
+
+  loadMessages(){
+    this.loadOlderMessages.emit();
   }
 
   handleMessage(content: any){

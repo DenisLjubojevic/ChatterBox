@@ -2,9 +2,9 @@ import {
   AfterViewChecked,
   AfterViewInit,
   Component,
-  ElementRef,
+  ElementRef, EventEmitter,
   Input,
-  OnChanges, OnDestroy,
+  OnChanges, OnDestroy, Output,
   SimpleChanges,
   ViewChild
 } from '@angular/core';
@@ -21,7 +21,10 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class MessageListComponent implements OnChanges, AfterViewChecked{
   @Input() messageList: Message[] = [];
+  @Input() allMessagesLoaded: boolean = false;
   @ViewChild('messageListContainer') private messageListContainer!:ElementRef;
+
+  @Output() loadOlderMessages = new EventEmitter<void>();
 
   private shouldAutoScroll: boolean = true;
   public currentUser: Users | null = null;
@@ -47,6 +50,23 @@ export class MessageListComponent implements OnChanges, AfterViewChecked{
       this.scrollToBottom();
     }
   }
+
+  loadMore(){
+    const container = this.messageListContainer.nativeElement;
+
+    const currentScrollHeight = container.scrollHeight;
+    const currentScrollTop = container.scrollTop;
+
+    this.shouldAutoScroll = false;
+    this.loadOlderMessages.emit();
+
+    setTimeout(() => {
+      const newScrollHeight = container.scrollHeight;
+      container.scrollTop = newScrollHeight - currentScrollHeight + currentScrollTop;
+    }, 100);
+
+  }
+
 
   ngAfterViewChecked() {
     if (this.shouldAutoScroll){
