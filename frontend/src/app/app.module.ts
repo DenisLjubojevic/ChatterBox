@@ -34,6 +34,7 @@ import {MatInputModule} from "@angular/material/input";
 import { LanguageComponent } from './components/settings/language/language.component';
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import { ProfileViewComponent } from './components/Profile/profile-view/profile-view.component';
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -63,6 +64,7 @@ export function HttpLoaderFactory(http: HttpClient){
     AccountSettingsComponent,
     ChangePasswordDialogComponent,
     LanguageComponent,
+    ProfileViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -95,7 +95,8 @@
     "emailPlaceholder": "Email",
     "editButton": "Edit Profile",
     "saveButton": "Save Changes",
-    "cancelButton": "Cancel"
+    "cancelButton": "Cancel",
+    "closeButton": "Close"
   },
   "accountSettings": {
     "title": "Account Settings",
@@ -141,7 +142,8 @@
       "leftChat": "Left chat",
       "joinChat": "Join chat",
       "friendRequest": "Friend request",
-      "chatInvite": "Chat invitation"
+      "chatInvite": "Chat invitation",
+      "notVisible": "Private profile"
     },
     "message": {
       "updateTheme": "Do you really want to update your theme?",
@@ -173,7 +175,8 @@
       "chatInviteSucces": "You have sent chat invite",
       "friendInvite": "Do you really want to add new friend?",
       "friendInviteSuccess": "You have sent friend request",
-      "deleteAccount": "Do you really want to delete your account?"
+      "deleteAccount": "Do you really want to delete your account?",
+      "notVisible": "User profile is set to private"
     },
     "button": {
       "confirm": "Yes",

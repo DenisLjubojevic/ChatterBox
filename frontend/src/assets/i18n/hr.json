@@ -95,7 +95,8 @@
     "emailPlaceholder": "Email",
     "editButton": "Uredi Profil",
     "saveButton": "Spremi Promjene",
-    "cancelButton": "Zatvori"
+    "cancelButton": "Prekini",
+    "closeButton": "Zatvori"
   },
   "accountSettings": {
     "title": "Postavke Računa",
@@ -141,7 +142,8 @@
       "leftChat": "Napušteni razgovor",
       "joinChat": "Pridruženi ste razgovoru",
       "friendRequest": "Zahtjev za prijateljstvo",
-      "chatInvite": "Zahtjev za pristup razgovoru"
+      "chatInvite": "Zahtjev za pristup razgovoru",
+      "notVisible": "Privatan korisnički profil"
     },
     "message": {
       "updateTheme": "Da li stvarno želiš promijeniti temu?",
@@ -173,7 +175,8 @@
       "chatInviteSucces": "Poslali ste zahtjev za pristup razgovoru!",
       "friendInvite": "Da li stvarno želite dodati novog prijatelja?",
       "friendInviteSuccess": "Poslali ste zahtjev za prijateljstvo",
-      "deleteAccount": "Da li stvarno želite obrisati svoj račun?"
+      "deleteAccount": "Da li stvarno želite obrisati svoj račun?",
+      "notVisible": "Korisnički profil je postavljen na privatno"
     },
     "button": {
       "confirm": "Da",

@@ -14,6 +14,7 @@ import {ModelRequest} from "../../../models/ModelRequest";
 import {Subject, takeUntil} from "rxjs";
 import {UserSettings} from "../../../models/UserSettings";
 import {TranslateService} from "@ngx-translate/core";
+import {ProfileViewComponent} from "../../Profile/profile-view/profile-view.component";
 
 @Component({
   selector: 'app-chat-room-list',
@@ -199,6 +200,30 @@ export class ChatRoomListComponent implements OnInit, OnDestroy{
     this.chatRoomService.getMembersOfChat(room.id).subscribe(data => {
       this.chatMembers = data;
     })
+  }
+
+  viewMemberProfile(member: any){
+    const memberVisibility = this.memberSettingsCache[member.id].profileVisibility;
+
+    if (memberVisibility){
+      this.dialog.open(ProfileViewComponent, {
+        width: '600px',
+        height: '450px',
+        data: { user: member }
+      });
+    }else{
+      this.dialog.open(ConfirmDialogComponent,{
+        width: "300px",
+        data: {
+          title: 'dialog.title.notVisible',
+          message: 'dialog.message.notVisible',
+          isConfirm: false,
+          okText: 'dialog.button.ok'
+        }
+      })
+    }
+
+
   }
 
   closeDetails(){

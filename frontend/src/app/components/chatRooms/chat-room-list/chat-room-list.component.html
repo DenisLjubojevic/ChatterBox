@@ -71,7 +71,7 @@
       <hr>
       <h2>{{'chatRoomList.members' | translate}}</h2>
       <div  class="chat-details-friends">
-        <div *ngFor="let member of chatMembers" class="member-row">
+        <div *ngFor="let member of chatMembers" class="member-row" (click)="viewMemberProfile(member)">
           <div class="picture-placeholder">
             <img [src]="member.pfpUrl" alt="profile picture" class="member-picture">
           </div>
@@ -104,7 +104,7 @@
       <hr>
       <h2>{{'chatRoomList.members' | translate}}</h2>
       <div  class="chat-details-friends">
-        <div *ngFor="let member of chatMembers" class="member-row">
+        <div *ngFor="let member of chatMembers" class="member-row" (click)="viewMemberProfile(member)">
           <div class="picture-placeholder">
             <img [src]="member.pfpUrl" alt="profile picture" class="member-picture">
           </div>

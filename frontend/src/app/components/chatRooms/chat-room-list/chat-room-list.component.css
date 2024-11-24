@@ -130,7 +130,16 @@ app-message-input {
 .member-row{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding-left: 10px;
+}
+
+.member-row:hover{
+  transform: scale(0.9);
+  background-color: var(--color-border);
+  padding-left: 20px;
+  border-radius: 10px;
 }
 
 .picture-placeholder{
@@ -150,11 +159,11 @@ app-message-input {
 }
 
 .member-name{
-  margin-top: 4px;
+  margin-top: 20px;
   margin-left: 10px;
   font-size: 18px;
   display: flex;
-  width: 100%;
+  width: 90%;
   flex-direction: row;
   justify-content: space-between;
 }
