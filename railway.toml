@@ -1,5 +1,5 @@
 [build]
-base = "./backend"
+  project = "backend"
 
-[env]
-JAVA_VERSION = "23"
+[deploy]
+  command = "cd backend && ./mvnw spring-boot:run"
