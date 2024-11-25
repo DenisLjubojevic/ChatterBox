@@ -1,0 +1,5 @@
+[build]
+base = "./backend"
+
+[env]
+JAVA_VERSION = "23"
