@@ -2,7 +2,7 @@
 FROM maven:3.8-openjdk-17-slim AS builder
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /app/backend
 
 # Copy the backend files into the container
 COPY ./backend /app/backend
