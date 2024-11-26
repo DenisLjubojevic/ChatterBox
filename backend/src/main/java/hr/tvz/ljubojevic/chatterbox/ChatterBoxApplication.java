@@ -9,7 +9,7 @@ public class ChatterBoxApplication {
 
 	public static void main(String[] args) {
 		Dotenv dotenv = Dotenv.configure()
-				.directory("/backend")
+				.directory("/app/backend")
 				.load();
 
 

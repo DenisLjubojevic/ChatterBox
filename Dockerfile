@@ -5,7 +5,7 @@ FROM maven:3.8-openjdk-17-slim AS builder
 WORKDIR /app
 
 # Copy the backend files into the container
-COPY ./backend /app
+COPY ./backend /app/backend
 
 # Build the backend using Maven
 RUN mvn clean package -DskipTests
