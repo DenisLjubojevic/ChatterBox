@@ -1,14 +1,22 @@
-# Use an official Java runtime as a parent image
-FROM openjdk:17-jdk-slim
+# Use an official Maven image for building
+FROM maven:3.8-openjdk-17-slim AS builder
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the backend project into the container
+# Copy the backend files into the container
 COPY ./backend /app
 
-# Build the project (if needed, replace this with your build tool)
-RUN ./mvnw clean package
+# Build the backend using Maven
+RUN mvn clean package -DskipTests
 
-# Run the Spring Boot app
-CMD ["java", "-jar", "target/backend.jar"]
+# Use OpenJDK to run the application
+FROM openjdk:17-jdk-slim
+
+WORKDIR /app
+
+# Copy the JAR from the builder image
+COPY --from=builder /app/target/*.jar /app/backend.jar
+
+# Command to run the app
+CMD ["java", "-jar", "backend.jar"]
