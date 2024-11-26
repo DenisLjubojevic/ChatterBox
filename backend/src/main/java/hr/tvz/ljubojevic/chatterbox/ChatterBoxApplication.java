@@ -13,14 +13,12 @@ public class ChatterBoxApplication {
 				.load();
 
 
-		System.setProperty("PORT", dotenv.get("PORT"));
-		System.setProperty("DB_URL", dotenv.get("DB_URL"));
+		System.setProperty("MYSQL_HOST", dotenv.get("MYSQL_HOST"));
+		System.setProperty("MYSQL_PORT", dotenv.get("MYSQL_PORT"));
+		System.setProperty("MYSQL_DATABASE", dotenv.get("MYSQL_DATABASE"));
 		System.setProperty("DB_USERNAME", dotenv.get("DB_USERNAME"));
 		System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
 		System.setProperty("JWT_SECRET", dotenv.get("JWT_SECRET"));
-		System.setProperty("REDIS_HOST", dotenv.get("REDIS_HOST"));
-		System.setProperty("REDIS_PORT", dotenv.get("REDIS_PORT"));
-		System.setProperty("REDIS_PASSWORD", dotenv.get("REDIS_PASSWORD"));
 
 		SpringApplication.run(ChatterBoxApplication.class, args);
 	}
