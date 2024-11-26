@@ -1,5 +1,5 @@
 [build]
-project = "backend"
+  dockerfile = "backend/Dockerfile"
 
 [deploy]
-command = "cd backend && ./mvnw clean package && java -jar target/*.jar"
+  command = "docker build -t app . && docker run -p 8080:8080 app"
