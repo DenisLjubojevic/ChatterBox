@@ -18,5 +18,8 @@ WORKDIR /app
 # Copy the JAR from the builder image
 COPY --from=builder /app/backend/target/*.jar /app/backend.jar
 
+# Copy the .env file
+COPY ./backend/.env /app/backend/.env
+
 # Command to run the app
 CMD ["java", "-jar", "backend.jar"]
