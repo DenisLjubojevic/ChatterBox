@@ -4,7 +4,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "hr.tvz.ljubojevic.chatterbox")
 public class ChatterBoxApplication {
 
 	public static void main(String[] args) {
