@@ -17,6 +17,7 @@ spring.servlet.multipart.max-file-size=128MB
 spring.servlet.multipart.max-request-size=128MB
 spring.servlet.multipart.enabled=true
 
+spring.redis.enabled=false
 spring.redis.host=REDIS_HOST
 spring.redis.port=REDIS_PORT
 spring.redis.password=REDIS_PASSWORD
