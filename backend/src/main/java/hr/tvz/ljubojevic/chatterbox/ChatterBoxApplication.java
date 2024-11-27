@@ -3,8 +3,9 @@ package hr.tvz.ljubojevic.chatterbox;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 
-@SpringBootApplication(scanBasePackages = "hr.tvz.ljubojevic.chatterbox")
+@SpringBootApplication(exclude = {RedisAutoConfiguration.class})
 public class ChatterBoxApplication {
 
 	public static void main(String[] args) {
