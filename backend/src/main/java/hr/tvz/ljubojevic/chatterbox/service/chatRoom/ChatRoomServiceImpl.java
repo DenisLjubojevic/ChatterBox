@@ -2,7 +2,6 @@ package hr.tvz.ljubojevic.chatterbox.service.chatRoom;
 
 import hr.tvz.ljubojevic.chatterbox.DTO.ChatRoomDTO;
 import hr.tvz.ljubojevic.chatterbox.DTO.UserDTO;
-import hr.tvz.ljubojevic.chatterbox.controller.UserController;
 import hr.tvz.ljubojevic.chatterbox.model.ChatInvitation;
 import hr.tvz.ljubojevic.chatterbox.model.ChatRoom;
 import hr.tvz.ljubojevic.chatterbox.model.User;
@@ -11,7 +10,6 @@ import hr.tvz.ljubojevic.chatterbox.repository.ChatRoomRepository;
 import hr.tvz.ljubojevic.chatterbox.repository.MessageRepository;
 import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
 import hr.tvz.ljubojevic.chatterbox.service.FileStorageService;
-import hr.tvz.ljubojevic.chatterbox.service.message.MessageService;
 import hr.tvz.ljubojevic.chatterbox.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

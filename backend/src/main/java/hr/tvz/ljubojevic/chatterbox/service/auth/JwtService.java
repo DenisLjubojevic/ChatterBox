@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,13 @@ public class JwtService {
                 .setSigningKey(getSigningKey())
                 .build()
                 .parseClaimsJws(token)
-                .getBody()  ;
+                .getBody();
+    }
+
+    @PostConstruct
+    public void debugProperties() {
+        System.out.println("JWT Secret: " + secret);
+        System.out.println("Token Expiration: " + expiration);
     }
 
     private Key getSigningKey(){

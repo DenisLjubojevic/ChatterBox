@@ -5,7 +5,6 @@ import hr.tvz.ljubojevic.chatterbox.DTO.UserDTO;
 import hr.tvz.ljubojevic.chatterbox.model.*;
 import hr.tvz.ljubojevic.chatterbox.repository.*;
 import hr.tvz.ljubojevic.chatterbox.service.FileStorageService;
-import hr.tvz.ljubojevic.chatterbox.service.chatRoom.ChatRoomServiceImpl;
 import hr.tvz.ljubojevic.chatterbox.service.userChat.UserChatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

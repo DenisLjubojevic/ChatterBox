@@ -1,11 +1,9 @@
 package hr.tvz.ljubojevic.chatterbox.service.userChat;
 
-import hr.tvz.ljubojevic.chatterbox.DTO.UserDTO;
 import hr.tvz.ljubojevic.chatterbox.model.ChatRoom;
 import hr.tvz.ljubojevic.chatterbox.model.User;
 import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
 import hr.tvz.ljubojevic.chatterbox.service.chatRoom.ChatRoomService;
-import hr.tvz.ljubojevic.chatterbox.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
