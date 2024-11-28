@@ -7,6 +7,7 @@ import hr.tvz.ljubojevic.chatterbox.repository.*;
 import hr.tvz.ljubojevic.chatterbox.service.FileStorageService;
 import hr.tvz.ljubojevic.chatterbox.service.userChat.UserChatService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -44,6 +45,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RefreshTokenRepository refreshTokenRepository;
 
+    @Value("${image.baseUrl}")
+    private String imageBaseUrl;
+
     @Override
     @Transactional
     public Optional<UserDTO> findByUsername(String username) {
@@ -75,7 +79,7 @@ public class UserServiceImpl implements UserService {
         user.setPass(passwordEncoder.encode(userDTO.getPass()));
         user.setEmail(userDTO.getEmail());
         user.setDisplayedName(userDTO.getDisplayedName());
-        user.setPfpUrl("http://localhost:8080/images/user.png");
+        user.setPfpUrl(imageBaseUrl + "user.png");
         user.setOnline(false);
         user.setLastSeen(LocalDateTime.now());
         user.setRole(userDTO.getRole());
@@ -96,7 +100,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
 
         String oldFileUrl = user.getPfpUrl();
-        String defaultProfilePicUrl = "http://localhost:8080/images/user.png";
+        String defaultProfilePicUrl = imageBaseUrl + "user.png";
 
         if (oldFileUrl != null && !oldFileUrl.equals(defaultProfilePicUrl)) {
             fileStorageService.deleteFile(oldFileUrl);
@@ -235,7 +239,7 @@ public class UserServiceImpl implements UserService {
                     System.out.println("User chat room - " + chatRoom);
                     this.messageRepository.deleteMsg(chatRoom.getId());
 
-                    if (!Objects.equals(chatRoom.getPictureUrl(), "http://localhost:8080/images/groupDefault.png")) {
+                    if (!Objects.equals(chatRoom.getPictureUrl(), imageBaseUrl + "groupDefault.png")) {
                         fileStorageService.deleteFile(chatRoom.getPictureUrl());
                     }
 

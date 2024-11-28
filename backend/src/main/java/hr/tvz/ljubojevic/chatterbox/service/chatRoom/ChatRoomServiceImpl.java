@@ -12,6 +12,7 @@ import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
 import hr.tvz.ljubojevic.chatterbox.service.FileStorageService;
 import hr.tvz.ljubojevic.chatterbox.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,6 +39,9 @@ public class ChatRoomServiceImpl implements ChatRoomService {
     private UserRepository userRepository;
     @Autowired
     private ChatInviteRepository chatInviteRepository;
+
+    @Value("${image.baseUrl}")
+    private String imageBaseUrl;
 
     @Override
     public List<ChatRoomDTO> getChatRoomByMemberId(Long userId){
@@ -73,7 +77,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
         chatRoom.setPinned(false);
 
         if (chatRoomDTO.getPictureUrl().equals("default")) {
-            chatRoom.setPictureUrl("http://localhost:8080/images/groupDefault.png");
+            chatRoom.setPictureUrl(imageBaseUrl + "groupDefault.png");
         }else{
             chatRoom.setPictureUrl(chatRoomDTO.getPictureUrl());
         }
@@ -108,7 +112,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
         chatRoom.setPinned(false);
         chatRoom.setMuted(false);
         chatRoom.setCreatedBy(sender);
-        chatRoom.setPictureUrl("http://localhost:8080/images/groupDefault.png");
+        chatRoom.setPictureUrl(imageBaseUrl + "groupDefault.png");
 
         chatRoom = chatRoomRepository.save(chatRoom);
         return convertChatRoomToChatRoomDTO(chatRoom);
@@ -146,7 +150,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
         ChatRoom chatRoom = chatRoomRepository.findById(chatRoomID).orElseThrow(() -> new RuntimeException("Chat room not found"));
 
         String oldUrl = chatRoom.getPictureUrl();
-        String defaultPicture = "http://localhost:8080/images/groupDefault.png";
+        String defaultPicture = imageBaseUrl + "groupDefault.png";
 
         if (oldUrl != null && !oldUrl.equals(defaultPicture)) {
             fileStorageService.deleteFile(oldUrl);
@@ -244,7 +248,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
         if (chatRoomDTO.isPresent()) {
             this.messageRepository.deleteMsg(id);
 
-            if (!Objects.equals(chatRoomDTO.get().getPictureUrl(), "http://localhost:8080/images/groupDefault.png")) {
+            if (!Objects.equals(chatRoomDTO.get().getPictureUrl(), imageBaseUrl + "groupDefault.png")) {
                 fileStorageService.deleteFile(chatRoomDTO.get().getPictureUrl());
             }
 
