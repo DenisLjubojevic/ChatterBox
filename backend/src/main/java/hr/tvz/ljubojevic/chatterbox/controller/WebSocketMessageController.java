@@ -12,9 +12,6 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Controller
 @RequiredArgsConstructor
 public class WebSocketMessageController {
@@ -49,13 +46,5 @@ public class WebSocketMessageController {
         );
 
         messagingTemplate.convertAndSend("/topic/messages", response);
-    }
-
-    public void sendStatusUpdate(Long userId, String status) {
-        Map<String, String> update = new HashMap<>();
-        update.put("userId", userId.toString());
-        update.put("status", status);
-
-        messagingTemplate.convertAndSend("/topic/user-status", update);
     }
 }

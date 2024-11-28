@@ -6,7 +6,6 @@ import hr.tvz.ljubojevic.chatterbox.model.User;
 import hr.tvz.ljubojevic.chatterbox.model.UserSettings;
 import hr.tvz.ljubojevic.chatterbox.repository.UserSettingRepository;
 import hr.tvz.ljubojevic.chatterbox.service.user.UserService;
-import hr.tvz.ljubojevic.chatterbox.service.user.UserStatusService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,6 @@ import java.util.*;
 @Slf4j
 public class UserController {
     private UserService userService;
-    private UserStatusService userStatusService;
 
     @Autowired
     private UserSettingRepository userSettingRepository;
@@ -42,28 +40,6 @@ public class UserController {
     public Optional<UserDTO> getUserById(@PathVariable Long id) {
         log.info("getUserById called");
         return Optional.of(userService.convertUserToDTO(userService.findById(id).get()));
-    }
-
-    @GetMapping("/status/{userId}")
-    public ResponseEntity<String> getUserStatus(@PathVariable Long userId) {
-        String status = userStatusService.getUserStatus(userId);
-        if (status == null) {
-            status = "offline";
-        }
-        return ResponseEntity.ok(status);
-    }
-    @GetMapping("/status/all")
-    public ResponseEntity<Map<Long, String>> getUserStatusAll() {
-        Map<Long, String> statuses = new HashMap<>();
-
-        List<User> users = userService.findAll();
-
-        for (User user : users) {
-            String status = userStatusService.getUserStatus(user.getId());
-            statuses.put(user.getId(), status != null ? status : "offline");
-        }
-
-        return ResponseEntity.ok(statuses);
     }
 
     @PostMapping("/create")
