@@ -13,6 +13,8 @@ backend/target/
 
 # Exclude application.properties
 backend/src/main/resources/application.properties
+backend/src/main/resources/application-prod.properties
+backend/src/main/resources/application-dev.properties
 
 # Ignore system files
 .DS_Store
