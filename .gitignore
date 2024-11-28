@@ -13,7 +13,11 @@ backend/target/
 
 # Exclude application.properties
 backend/src/main/resources/application.properties
+
+# Exclude application-prod.properties
 backend/src/main/resources/application-prod.properties
+
+# Exclude application-dev.properties
 backend/src/main/resources/application-dev.properties
 
 # Ignore system files
