@@ -1,8 +1,10 @@
 package hr.tvz.ljubojevic.chatterbox.service;
 
 import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 import javax.sql.DataSource;
 import java.net.URI;
@@ -33,5 +35,10 @@ public class DataSourceConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 
         return dataSource;
+    }
+
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
     }
 }
