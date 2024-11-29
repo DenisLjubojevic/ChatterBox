@@ -11,7 +11,7 @@ import {UserSettings} from "../models/UserSettings";
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl = 'http://localhost:8080';
+  baseUrl = 'https://chatterbox-production-3863.up.railway.app';
   private profileSource = new BehaviorSubject<Users | null>(null);
   profile$ = this.profileSource.asObservable();
 

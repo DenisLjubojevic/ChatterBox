@@ -9,7 +9,7 @@ import {ModelRequest} from "../models/ModelRequest";
   providedIn: 'root'
 })
 export class MessagesService {
-  baseUrl = 'http://localhost:8080'
+  baseUrl = 'https://chatterbox-production-3863.up.railway.app'
   constructor(private http: HttpClient) { }
 
   httpOptions = {

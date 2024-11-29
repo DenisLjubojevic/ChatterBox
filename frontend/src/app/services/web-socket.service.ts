@@ -20,7 +20,7 @@ export class WebSocketService {
   }
 
   connect() {
-    const socket = new SockJS('http://localhost:8080/ws');
+    const socket = new SockJS('https://chatterbox-production-3863.up.railway.app/ws');
     this.stompClient = Stomp.over(socket);
 
     this.stompClient.connect({}, () => {
@@ -44,7 +44,7 @@ export class WebSocketService {
   }
 
   getUserStatus(userId: string): Observable<string> {
-    return this.http.get<string>(`http://localhost:8080/user/status/${userId}`);
+    return this.http.get<string>(`https://chatterbox-production-3863.up.railway.app/user/status/${userId}`);
   }
 
   onStatusUpdate(): Observable<{ userId: string; status: string}>{

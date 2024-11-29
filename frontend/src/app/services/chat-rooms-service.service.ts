@@ -9,7 +9,7 @@ import {ChatInvitation} from "../models/ChatInvitation";
   providedIn: 'root'
 })
 export class ChatRoomsServiceService {
-  baseUrl = 'http://localhost:8080'
+  baseUrl = 'https://chatterbox-production-3863.up.railway.app'
   constructor(private http: HttpClient) { }
 
   httpOptions = {

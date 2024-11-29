@@ -6,7 +6,6 @@ import hr.tvz.ljubojevic.chatterbox.repository.jpa.ChatRoomRepository;
 import hr.tvz.ljubojevic.chatterbox.repository.jpa.MessageRepository;
 import hr.tvz.ljubojevic.chatterbox.repository.jpa.UserRepository;
 import hr.tvz.ljubojevic.chatterbox.service.FileStorageService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

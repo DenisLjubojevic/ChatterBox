@@ -7,7 +7,7 @@ import {Users} from "../../models/Users";
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/auth/api';
+  private apiUrl = 'https://chatterbox-production-3863.up.railway.app/auth/api';
   private tokenSubject = new BehaviorSubject<string | null>(this.getToken());
   constructor(private http: HttpClient) { }
 
@@ -41,7 +41,7 @@ export class AuthService {
     console.log("Sign in called from frontend!");
     return this.http
       .post<Users>(
-        `http://localhost:8080/user/create`,
+        `https://chatterbox-production-3863.up.railway.app/user/create`,
         JSON.stringify(data),
         this.httpOptions
         ).pipe(retry(1), catchError(this.errorHandl));

@@ -29,6 +29,6 @@ export class UserStatusService {
   }
   getAllUserStatuses(): Observable<{ [userId: string]: string }> {
     return this.http
-      .get<{ [userId: string]: string }>('http://localhost:8080/user/status/all');
+      .get<{ [userId: string]: string }>('https://chatterbox-production-3863.up.railway.app/user/status/all');
   }
 }
