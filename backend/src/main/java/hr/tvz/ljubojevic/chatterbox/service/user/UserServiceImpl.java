@@ -31,7 +31,6 @@ public class UserServiceImpl implements UserService {
     private FileStorageService fileStorageService;
     @Autowired
     private FriendRequestsRepository friendRequestsRepository;
-    @Lazy
     @Autowired
     private UserChatService userChatService;
     @Autowired
