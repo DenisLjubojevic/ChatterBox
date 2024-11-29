@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {ThemesService} from "./services/themes.service";
 import {UserSettingsService} from "./services/user-settings.service";
-import {TranslateService} from "@ngx-translate/core";
 import {LanguageService} from "./services/language.service";
 
 @Component({
