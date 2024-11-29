@@ -7,9 +7,11 @@ import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.core.env.AbstractEnvironment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 
 @SpringBootApplication(exclude = {RedisAutoConfiguration.class})
 @EnableJpaRepositories(basePackages = "hr.tvz.ljubojevic.chatterbox.repository.jpa")
+@EnableRedisRepositories(basePackages = "hr.tvz.ljubojevic.chatterbox.repository.redis")
 public class ChatterBoxApplication {
 
 	public static void main(String[] args) {

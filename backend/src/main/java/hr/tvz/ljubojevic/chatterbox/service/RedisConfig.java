@@ -9,11 +9,14 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "hr.tvz.ljubojevic.chatterbox.repository.redis")
 public class RedisConfig {
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
-        return new LettuceConnectionFactory("localhost", 6379);
+        String host = System.getenv("REDISHOST");
+        int port = Integer.parseInt(System.getenv("REDISPORT"));
+        LettuceConnectionFactory factory = new LettuceConnectionFactory(host, port);
+        factory.setPassword(System.getenv("REDISPASSWORD"));
+        return factory;
     }
 
     @Bean
