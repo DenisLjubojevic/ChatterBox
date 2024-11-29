@@ -1,4 +1,4 @@
-package hr.tvz.ljubojevic.chatterbox.repository;
+package hr.tvz.ljubojevic.chatterbox.repository.jpa;
 
 import hr.tvz.ljubojevic.chatterbox.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

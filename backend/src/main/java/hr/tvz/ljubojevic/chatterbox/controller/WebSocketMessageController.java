@@ -3,7 +3,7 @@ package hr.tvz.ljubojevic.chatterbox.controller;
 import hr.tvz.ljubojevic.chatterbox.DTO.MessageRequestDTO;
 import hr.tvz.ljubojevic.chatterbox.DTO.WebSocketMessageDTO;
 import hr.tvz.ljubojevic.chatterbox.model.User;
-import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
+import hr.tvz.ljubojevic.chatterbox.repository.jpa.UserRepository;
 import hr.tvz.ljubojevic.chatterbox.service.message.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

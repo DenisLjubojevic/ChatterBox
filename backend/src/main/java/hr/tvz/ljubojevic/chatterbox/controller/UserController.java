@@ -4,7 +4,7 @@ import hr.tvz.ljubojevic.chatterbox.DTO.UserDTO;
 import hr.tvz.ljubojevic.chatterbox.model.ChangePasswordRequest;
 import hr.tvz.ljubojevic.chatterbox.model.User;
 import hr.tvz.ljubojevic.chatterbox.model.UserSettings;
-import hr.tvz.ljubojevic.chatterbox.repository.UserSettingRepository;
+import hr.tvz.ljubojevic.chatterbox.repository.jpa.UserSettingRepository;
 import hr.tvz.ljubojevic.chatterbox.service.user.UserService;
 import hr.tvz.ljubojevic.chatterbox.service.user.UserStatusService;
 import lombok.AllArgsConstructor;

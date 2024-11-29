@@ -1,7 +1,7 @@
 package hr.tvz.ljubojevic.chatterbox.service.user;
 
 import hr.tvz.ljubojevic.chatterbox.model.UserSettings;
-import hr.tvz.ljubojevic.chatterbox.repository.UserSettingRepository;
+import hr.tvz.ljubojevic.chatterbox.repository.jpa.UserSettingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

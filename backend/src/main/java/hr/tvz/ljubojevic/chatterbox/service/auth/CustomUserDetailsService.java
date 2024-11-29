@@ -1,7 +1,7 @@
 package hr.tvz.ljubojevic.chatterbox.service.auth;
 
 import hr.tvz.ljubojevic.chatterbox.model.User;
-import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
+import hr.tvz.ljubojevic.chatterbox.repository.jpa.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

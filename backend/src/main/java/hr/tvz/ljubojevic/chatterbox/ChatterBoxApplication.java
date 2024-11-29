@@ -9,7 +9,7 @@ import org.springframework.core.env.AbstractEnvironment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(exclude = {RedisAutoConfiguration.class})
-@EnableJpaRepositories(basePackages = "hr.tvz.ljubojevic.chatterbox.repository")
+@EnableJpaRepositories(basePackages = "hr.tvz.ljubojevic.chatterbox.repository.jpa")
 public class ChatterBoxApplication {
 
 	public static void main(String[] args) {

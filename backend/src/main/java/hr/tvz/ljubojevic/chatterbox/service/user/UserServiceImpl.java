@@ -3,7 +3,7 @@ package hr.tvz.ljubojevic.chatterbox.service.user;
 import hr.tvz.ljubojevic.chatterbox.DTO.FriendsDTO;
 import hr.tvz.ljubojevic.chatterbox.DTO.UserDTO;
 import hr.tvz.ljubojevic.chatterbox.model.*;
-import hr.tvz.ljubojevic.chatterbox.repository.*;
+import hr.tvz.ljubojevic.chatterbox.repository.jpa.*;
 import hr.tvz.ljubojevic.chatterbox.service.FileStorageService;
 import hr.tvz.ljubojevic.chatterbox.service.userChat.UserChatService;
 import org.springframework.beans.factory.annotation.Autowired;

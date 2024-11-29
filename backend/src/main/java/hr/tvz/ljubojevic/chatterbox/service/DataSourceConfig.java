@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.sql.SQLException;
 
 @Configuration
 public class DataSourceConfig {

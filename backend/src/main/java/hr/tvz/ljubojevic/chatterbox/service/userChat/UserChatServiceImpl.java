@@ -2,7 +2,7 @@ package hr.tvz.ljubojevic.chatterbox.service.userChat;
 
 import hr.tvz.ljubojevic.chatterbox.model.ChatRoom;
 import hr.tvz.ljubojevic.chatterbox.model.User;
-import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
+import hr.tvz.ljubojevic.chatterbox.repository.jpa.UserRepository;
 import hr.tvz.ljubojevic.chatterbox.service.chatRoom.ChatRoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

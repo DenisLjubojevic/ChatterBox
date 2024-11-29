@@ -1,8 +1,8 @@
 package hr.tvz.ljubojevic.chatterbox.service.auth;
 
 import hr.tvz.ljubojevic.chatterbox.model.RefreshToken;
-import hr.tvz.ljubojevic.chatterbox.repository.RefreshTokenRepository;
-import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
+import hr.tvz.ljubojevic.chatterbox.repository.jpa.RefreshTokenRepository;
+import hr.tvz.ljubojevic.chatterbox.repository.jpa.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

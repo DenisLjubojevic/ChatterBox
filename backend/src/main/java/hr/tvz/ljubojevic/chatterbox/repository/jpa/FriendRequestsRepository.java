@@ -1,4 +1,4 @@
-package hr.tvz.ljubojevic.chatterbox.repository;
+package hr.tvz.ljubojevic.chatterbox.repository.jpa;
 
 import hr.tvz.ljubojevic.chatterbox.model.FriendRequests;
 import hr.tvz.ljubojevic.chatterbox.model.User;

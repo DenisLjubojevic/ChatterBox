@@ -5,7 +5,7 @@ import hr.tvz.ljubojevic.chatterbox.DTO.JwtResponseDTO;
 import hr.tvz.ljubojevic.chatterbox.DTO.RefreshTokenDTO;
 import hr.tvz.ljubojevic.chatterbox.model.RefreshToken;
 import hr.tvz.ljubojevic.chatterbox.model.User;
-import hr.tvz.ljubojevic.chatterbox.repository.UserRepository;
+import hr.tvz.ljubojevic.chatterbox.repository.jpa.UserRepository;
 import hr.tvz.ljubojevic.chatterbox.service.auth.JwtService;
 import hr.tvz.ljubojevic.chatterbox.service.auth.RefreshTokenService;
 import hr.tvz.ljubojevic.chatterbox.service.user.UserStatusService;
