@@ -20,8 +20,7 @@ public class UserChatServiceImpl implements UserChatService {
     public final MessageRepository messageRepository;
     public final FileStorageService fileStorageService;
 
-    @Value("${image.baseUrl}")
-    private String imageBaseUrl;
+    private String imageBaseUrl  = "chatterbox-production-3863.up.railway.app/";
 
     public UserChatServiceImpl(UserRepository userRepository,
                                ChatRoomRepository chatRoomRepository,

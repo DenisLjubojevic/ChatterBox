@@ -44,8 +44,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RefreshTokenRepository refreshTokenRepository;
 
-    @Value("${image.baseUrl}")
-    private String imageBaseUrl;
+    private String imageBaseUrl  = "chatterbox-production-3863.up.railway.app/";
 
     @Override
     @Transactional

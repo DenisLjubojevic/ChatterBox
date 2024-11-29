@@ -40,8 +40,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
     @Autowired
     private ChatInviteRepository chatInviteRepository;
 
-    @Value("${image.baseUrl}")
-    private String imageBaseUrl;
+    private String imageBaseUrl = "chatterbox-production-3863.up.railway.app/";
 
     @Override
     public List<ChatRoomDTO> getChatRoomByMemberId(Long userId){
