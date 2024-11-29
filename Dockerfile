@@ -15,8 +15,6 @@ FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-VOLUME /app/backend/uploads/images
-
 # Copy the JAR from the builder image
 COPY --from=builder /app/backend/target/*.jar /app/backend.jar
 
