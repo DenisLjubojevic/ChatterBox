@@ -19,7 +19,7 @@ public class UserChatServiceImpl implements UserChatService {
     public final MessageRepository messageRepository;
     public final FileStorageService fileStorageService;
 
-    private String imageBaseUrl  = "chatterbox-production-3863.up.railway.app/";
+    private String imageBaseUrl  = "chatterbox-production-3863.up.railway.app/images/";
 
     public UserChatServiceImpl(UserRepository userRepository,
                                ChatRoomRepository chatRoomRepository,
@@ -43,7 +43,7 @@ public class UserChatServiceImpl implements UserChatService {
             if (chatRoomOptional.isPresent()) {
                 this.messageRepository.deleteMsg(chatRoom.getId());
 
-                if (!Objects.equals(chatRoomOptional.get().getPictureUrl(), imageBaseUrl + "groupDefault.png")) {
+                if (!Objects.equals(chatRoomOptional.get().getPictureUrl(), imageBaseUrl + "d0Flltn.png")) {
                     fileStorageService.deleteFile(chatRoomOptional.get().getPictureUrl());
                 }
 

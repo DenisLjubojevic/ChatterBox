@@ -12,7 +12,6 @@ import hr.tvz.ljubojevic.chatterbox.repository.jpa.UserRepository;
 import hr.tvz.ljubojevic.chatterbox.service.FileStorageService;
 import hr.tvz.ljubojevic.chatterbox.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,7 +39,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
     @Autowired
     private ChatInviteRepository chatInviteRepository;
 
-    private String imageBaseUrl = "chatterbox-production-3863.up.railway.app/";
+    private String imageBaseUrl = "chatterbox-production-3863.up.railway.app/images/";
 
     @Override
     public List<ChatRoomDTO> getChatRoomByMemberId(Long userId){
@@ -76,7 +75,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
         chatRoom.setPinned(false);
 
         if (chatRoomDTO.getPictureUrl().equals("default")) {
-            chatRoom.setPictureUrl(imageBaseUrl + "groupDefault.png");
+            chatRoom.setPictureUrl(imageBaseUrl + "d0Flltn.png");
         }else{
             chatRoom.setPictureUrl(chatRoomDTO.getPictureUrl());
         }
@@ -111,7 +110,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
         chatRoom.setPinned(false);
         chatRoom.setMuted(false);
         chatRoom.setCreatedBy(sender);
-        chatRoom.setPictureUrl(imageBaseUrl + "groupDefault.png");
+        chatRoom.setPictureUrl(imageBaseUrl + "d0Flltn.png");
 
         chatRoom = chatRoomRepository.save(chatRoom);
         return convertChatRoomToChatRoomDTO(chatRoom);
@@ -149,7 +148,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
         ChatRoom chatRoom = chatRoomRepository.findById(chatRoomID).orElseThrow(() -> new RuntimeException("Chat room not found"));
 
         String oldUrl = chatRoom.getPictureUrl();
-        String defaultPicture = imageBaseUrl + "groupDefault.png";
+        String defaultPicture = imageBaseUrl + "d0Flltn.png";
 
         if (oldUrl != null && !oldUrl.equals(defaultPicture)) {
             fileStorageService.deleteFile(oldUrl);
@@ -247,7 +246,7 @@ public class ChatRoomServiceImpl implements ChatRoomService {
         if (chatRoomDTO.isPresent()) {
             this.messageRepository.deleteMsg(id);
 
-            if (!Objects.equals(chatRoomDTO.get().getPictureUrl(), imageBaseUrl + "groupDefault.png")) {
+            if (!Objects.equals(chatRoomDTO.get().getPictureUrl(), imageBaseUrl + "d0Flltn.png")) {
                 fileStorageService.deleteFile(chatRoomDTO.get().getPictureUrl());
             }
 

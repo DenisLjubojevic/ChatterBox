@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private RefreshTokenRepository refreshTokenRepository;
 
-    private String imageBaseUrl  = "chatterbox-production-3863.up.railway.app/";
+    private String imageBaseUrl  = "chatterbox-production-3863.up.railway.app/images/";
 
     @Override
     @Transactional
@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
         user.setPass(passwordEncoder.encode(userDTO.getPass()));
         user.setEmail(userDTO.getEmail());
         user.setDisplayedName(userDTO.getDisplayedName());
-        user.setPfpUrl(imageBaseUrl + "user.png");
+        user.setPfpUrl(imageBaseUrl + "UV6YMpP.png");
         user.setOnline(false);
         user.setLastSeen(LocalDateTime.now());
         user.setRole(userDTO.getRole());
@@ -98,7 +98,7 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
 
         String oldFileUrl = user.getPfpUrl();
-        String defaultProfilePicUrl = imageBaseUrl + "user.png";
+        String defaultProfilePicUrl = imageBaseUrl + "UV6YMpP.png";
 
         if (oldFileUrl != null && !oldFileUrl.equals(defaultProfilePicUrl)) {
             fileStorageService.deleteFile(oldFileUrl);
@@ -237,7 +237,7 @@ public class UserServiceImpl implements UserService {
                     System.out.println("User chat room - " + chatRoom);
                     this.messageRepository.deleteMsg(chatRoom.getId());
 
-                    if (!Objects.equals(chatRoom.getPictureUrl(), imageBaseUrl + "groupDefault.png")) {
+                    if (!Objects.equals(chatRoom.getPictureUrl(), imageBaseUrl + "d0Flltn.png")) {
                         fileStorageService.deleteFile(chatRoom.getPictureUrl());
                     }
 
