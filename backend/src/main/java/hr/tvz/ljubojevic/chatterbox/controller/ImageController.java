@@ -19,7 +19,7 @@ public class ImageController {
     @GetMapping("/{filename}")
     public ResponseEntity<Resource> getImage(@PathVariable String filename) {
         try {
-            Path file = Paths.get("/app/uploads/images").resolve(filename);
+            Path file = Paths.get("/images").resolve(filename);
             Resource resource = new UrlResource(file.toUri());
 
             if (resource.exists() || resource.isReadable()) {
