@@ -25,6 +25,11 @@ export class ProfileDetailsComponent {
     }
   }
 
+  loadUserPicture(){
+    console.log(this.user.pfpUrl);
+    return this.user.pfpUrl;
+  }
+
   toggleEditMode(){
     this.isEditMode = !this.isEditMode;
     if (this.isEditMode){

@@ -16,13 +16,10 @@ import java.nio.file.Paths;
 @RestController
 @RequestMapping("/images")
 public class ImageController {
-    private final Path imageLocation = Paths.get("uploads/images");
-
     @GetMapping("/{filename}")
     public ResponseEntity<Resource> getImage(@PathVariable String filename) {
-        System.out.println(filename);
         try {
-            Path file = imageLocation.resolve(filename);
+            Path file = Paths.get("/app/uploads/images").resolve(filename);
             Resource resource = new UrlResource(file.toUri());
 
             if (resource.exists() || resource.isReadable()) {

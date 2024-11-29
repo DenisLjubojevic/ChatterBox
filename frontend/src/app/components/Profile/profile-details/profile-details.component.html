@@ -2,7 +2,7 @@
   <div class="profile-container">
     <div class="profile-header">
       <div class="profile-image-container">
-        <img [src]="previewImage || user.pfpUrl" alt="Profile picture" class="profile-image">
+        <img [src]="previewImage || loadUserPicture()" alt="Profile picture" class="profile-image">
         <input type="file" (change)="onImageChange($event)" *ngIf="isEditMode">
       </div>
     </div>

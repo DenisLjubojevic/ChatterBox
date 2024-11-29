@@ -15,6 +15,12 @@ FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
+# Mount the volume from Railway to store images in a persistent location
+VOLUME /app/backend/uploads/images
+
+COPY ./backend/uploads/images /app/backend/uploads/images
+
+
 # Copy the JAR from the builder image
 COPY --from=builder /app/backend/target/*.jar /app/backend.jar
 
